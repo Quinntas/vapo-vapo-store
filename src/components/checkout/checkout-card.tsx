@@ -8,23 +8,23 @@ const CheckoutCard: React.FC = () => {
 	const { items, total, isEmpty } = useCart();
 	const { price: subtotal } = usePrice({
 		amount: total,
-		currencyCode: "USD",
+		currencyCode: "BRL",
 	});
 	const { t } = useTranslation("common");
 	const checkoutFooter = [
 		{
 			id: 1,
-			name: t("text-sub-total"),
+			name: t("Sub Total"),
 			price: subtotal,
 		},
 		{
 			id: 2,
-			name: t("text-shipping"),
+			name: t("Entrega"),
 			price: t("text-free"),
 		},
 		{
 			id: 3,
-			name: t("text-total"),
+			name: t("Total"),
 			price: subtotal,
 		},
 	];

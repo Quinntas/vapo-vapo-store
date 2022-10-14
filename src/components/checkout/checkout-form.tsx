@@ -36,7 +36,7 @@ const CheckoutForm: React.FC = () => {
 	return (
 		<>
 			<h2 className="text-lg md:text-xl xl:text-2xl font-bold text-heading mb-6 xl:mb-8">
-				{t("text-shipping-address")}
+				{t("Endereco para Entrega")}
 			</h2>
 			<form
 				onSubmit={handleSubmit(onSubmit)}
@@ -46,7 +46,7 @@ const CheckoutForm: React.FC = () => {
 				<div className="flex flex-col space-y-4 lg:space-y-5">
 					<div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0">
 						<Input
-							labelKey="forms:label-first-name"
+							labelKey="Primeiro Nome *"
 							{...register("firstName", {
 								required: "forms:first-name-required",
 							})}
@@ -55,7 +55,7 @@ const CheckoutForm: React.FC = () => {
 							className="w-full lg:w-1/2 "
 						/>
 						<Input
-							labelKey="forms:label-last-name"
+							labelKey="Ultimo Nome *"
 							{...register("lastName", {
 								required: "forms:last-name-required",
 							})}
@@ -65,7 +65,7 @@ const CheckoutForm: React.FC = () => {
 						/>
 					</div>
 					<Input
-						labelKey="forms:label-address"
+						labelKey="Endereco *"
 						{...register("address", {
 							required: "forms:address-required",
 						})}
@@ -75,7 +75,7 @@ const CheckoutForm: React.FC = () => {
 					<div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0">
 						<Input
 							type="tel"
-							labelKey="forms:label-phone"
+							labelKey="Numero *"
 							{...register("phone", {
 								required: "forms:phone-required",
 							})}
@@ -100,27 +100,21 @@ const CheckoutForm: React.FC = () => {
 						/>
 					</div>
 					<div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0">
+
 						<Input
-							labelKey="forms:label-city"
-							{...register("city")}
+							labelKey="CEP"
+							{...register("zipCode")}
 							variant="solid"
 							className="w-full lg:w-1/2 "
 						/>
-
-						<Input
-							labelKey="forms:label-postcode"
-							{...register("zipCode")}
-							variant="solid"
-							className="w-full lg:w-1/2 lg:ms-3 mt-2 md:mt-0"
-						/>
 					</div>
 					<div className="relative flex items-center ">
-						<CheckBox labelKey="forms:label-save-information" />
+						<CheckBox labelKey="Salvar Informacoes para a Proxima Compra" />
 					</div>
 					<TextArea
-						labelKey="forms:label-order-notes"
+						labelKey="Notas para o vendedor (Opcional)"
 						{...register("note")}
-						placeholderKey="forms:placeholder-order-notes"
+						placeholderKey="Notas para o vendedor, como algo que precisamos saber na entrega"
 						className="relative pt-3 xl:pt-6"
 					/>
 					<div className="flex w-full">
@@ -129,7 +123,7 @@ const CheckoutForm: React.FC = () => {
 							loading={isLoading}
 							disabled={isLoading}
 						>
-							{t("common:button-place-order")}
+							{t("Comprar")}
 						</Button>
 					</div>
 				</div>

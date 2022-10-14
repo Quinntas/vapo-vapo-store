@@ -5,7 +5,6 @@ import { useForm } from "react-hook-form";
 import Logo from "@components/ui/logo";
 import { useUI } from "@contexts/ui.context";
 import { useSignUpMutation, SignUpInputType } from "@framework/auth/use-signup";
-import { ImGoogle2, ImFacebook2 } from "react-icons/im";
 import Link from "@components/ui/link";
 import { ROUTES } from "@utils/routes";
 import { useTranslation } from "next-i18next";
@@ -40,19 +39,19 @@ const SignUpForm: React.FC = () => {
 					<Logo />
 				</div>
 				<p className="text-sm md:text-base text-body mt-2 mb-8 sm:mb-10">
-					{t("common:registration-helper")}{" "}
+					{t("Ao se registrar, voce concorda com os nossos")}{" "}
 					<Link
 						href={ROUTES.TERMS}
 						className="text-heading underline hover:no-underline focus:outline-none"
 					>
-						{t("common:text-terms")}
+						{t("termos")}
 					</Link>{" "}
 					&amp;{" "}
 					<Link
 						href={ROUTES.POLICY}
 						className="text-heading underline hover:no-underline focus:outline-none"
 					>
-						{t("common:text-policy")}
+						{t("servicos")}
 					</Link>
 				</p>
 			</div>
@@ -63,7 +62,7 @@ const SignUpForm: React.FC = () => {
 			>
 				<div className="flex flex-col space-y-4">
 					<Input
-						labelKey="forms:label-name"
+						labelKey="Nome"
 						type="text"
 						variant="solid"
 						{...register("name", {
@@ -86,7 +85,7 @@ const SignUpForm: React.FC = () => {
 						errorKey={errors.email?.message}
 					/>
 					<PasswordInput
-						labelKey="forms:label-password"
+						labelKey="Senha"
 						errorKey={errors.password?.message}
 						{...register("password", {
 							required: `${t("forms:password-required")}`,
@@ -99,7 +98,7 @@ const SignUpForm: React.FC = () => {
 							disabled={isLoading}
 							className="h-11 md:h-12 w-full mt-2"
 						>
-							{t("common:text-register")}
+							{t("Registrar")}
 						</Button>
 					</div>
 				</div>
@@ -107,36 +106,17 @@ const SignUpForm: React.FC = () => {
 			<div className="flex flex-col items-center justify-center relative text-sm text-heading mt-6 mb-3.5">
 				<hr className="w-full border-gray-300" />
 				<span className="absolute -top-2.5 px-2 bg-white">
-					{t("common:text-or")}
+					{t("Ou")}
 				</span>
 			</div>
-
-			<Button
-				type="submit"
-				loading={isLoading}
-				disabled={isLoading}
-				className="h-11 md:h-12 w-full mt-2.5 bg-facebook hover:bg-facebookHover"
-			>
-				<ImFacebook2 className="text-sm sm:text-base me-1.5" />
-				{t("common:text-login-with-facebook")}
-			</Button>
-			<Button
-				type="submit"
-				loading={isLoading}
-				disabled={isLoading}
-				className="h-11 md:h-12 w-full mt-2.5 bg-google hover:bg-googleHover"
-			>
-				<ImGoogle2 className="text-sm sm:text-base me-1.5" />
-				{t("common:text-login-with-google")}
-			</Button>
 			<div className="text-sm sm:text-base text-body text-center mt-5 mb-1">
-				{t("common:text-have-account")}{" "}
+				{t("Ja tem uma conta ?")}{" "}
 				<button
 					type="button"
 					className="text-sm sm:text-base text-heading underline font-bold hover:no-underline focus:outline-none"
 					onClick={handleSignIn}
 				>
-					{t("common:text-login")}
+					{t("Faca Login")}
 				</button>
 			</div>
 		</div>

@@ -28,16 +28,16 @@ export default function ProductPopup() {
 	const { price, basePrice, discount } = usePrice({
 		amount: data.sale_price ? data.sale_price : data.price,
 		baseAmount: data.price,
-		currencyCode: "USD",
+		currencyCode: "BRL",
 	});
 	const variations = getVariations(data.variations);
 	const { slug, image, name, description } = data;
 
 	const isSelected = !isEmpty(variations)
 		? !isEmpty(attributes) &&
-		  Object.keys(variations).every((variation) =>
-				attributes.hasOwnProperty(variation)
-		  )
+		Object.keys(variations).every((variation) =>
+			attributes.hasOwnProperty(variation)
+		)
 		: true;
 
 	function addToCart() {
@@ -140,13 +140,12 @@ export default function ProductPopup() {
 							<Button
 								onClick={addToCart}
 								variant="flat"
-								className={`w-full h-11 md:h-12 px-1.5 ${
-									!isSelected && "bg-gray-400 hover:bg-gray-400"
-								}`}
+								className={`w-full h-11 md:h-12 px-1.5 ${!isSelected && "bg-gray-400 hover:bg-gray-400"
+									}`}
 								disabled={!isSelected}
 								loading={addToCartLoader}
 							>
-								{t("text-add-to-cart")}
+								{t("Adcionar ao Carrinho")}
 							</Button>
 						</div>
 
@@ -155,7 +154,7 @@ export default function ProductPopup() {
 								onClick={navigateToCartPage}
 								className="w-full mb-4 h-11 md:h-12 rounded bg-gray-100 text-heading focus:outline-none border border-gray-300 transition-colors hover:bg-gray-50 focus:bg-gray-50"
 							>
-								{t("text-view-cart")}
+								{t("Ver Carrinho")}
 							</button>
 						)}
 
@@ -164,7 +163,7 @@ export default function ProductPopup() {
 							variant="flat"
 							className="w-full h-11 md:h-12"
 						>
-							{t("text-view-details")}
+							{t("Ver Detalhes")}
 						</Button>
 					</div>
 				</div>

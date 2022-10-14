@@ -39,7 +39,7 @@ const ProductSingleDetails: React.FC = () => {
 		data && {
 			amount: data.sale_price ? data.sale_price : data.price,
 			baseAmount: data.price,
-			currencyCode: "USD",
+			currencyCode: "BRL",
 		}
 	);
 	if (isLoading) return <p>Loading...</p>;
@@ -47,9 +47,9 @@ const ProductSingleDetails: React.FC = () => {
 
 	const isSelected = !isEmpty(variations)
 		? !isEmpty(attributes) &&
-		  Object.keys(variations).every((variation) =>
-				attributes.hasOwnProperty(variation)
-		  )
+		Object.keys(variations).every((variation) =>
+			attributes.hasOwnProperty(variation)
+		)
 		: true;
 
 	function addToCart() {
@@ -173,9 +173,8 @@ const ProductSingleDetails: React.FC = () => {
 					<Button
 						onClick={addToCart}
 						variant="slim"
-						className={`w-full md:w-6/12 xl:w-full ${
-							!isSelected && "bg-gray-400 hover:bg-gray-400"
-						}`}
+						className={`w-full md:w-6/12 xl:w-full ${!isSelected && "bg-gray-400 hover:bg-gray-400"
+							}`}
 						disabled={!isSelected}
 						loading={addToCartLoader}
 					>

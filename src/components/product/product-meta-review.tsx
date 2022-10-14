@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Collapse } from "@components/common/accordion";
-import ReviewForm from "@components/common/form/review-form";
 
 interface Props {
 	data: any;
@@ -16,15 +15,7 @@ const ProductMetaReview: React.FC<Props> = ({ data }) => {
 					key={item.title}
 					title={item.title}
 					translatorNS="review"
-					content={
-						data?.meta.length === item.id ? (
-							<>
-								{item.content} <ReviewForm />
-							</>
-						) : (
-							item.content
-						)
-					}
+					content={item.content}
 					expanded={expanded}
 					setExpanded={setExpanded}
 					variant="transparent"

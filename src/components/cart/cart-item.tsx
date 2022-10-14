@@ -19,11 +19,11 @@ const CartItem: React.FC<CartItemProps> = ({ item }) => {
 	const { addItemToCart, removeItemFromCart, clearItemFromCart } = useCart();
 	const { price } = usePrice({
 		amount: item.price,
-		currencyCode: "USD",
+		currencyCode: "BRL",
 	});
 	const { price: totalPrice } = usePrice({
 		amount: item.itemTotal,
-		currencyCode: "USD",
+		currencyCode: "BRL",
 	});
 
 	return (
@@ -62,7 +62,7 @@ const CartItem: React.FC<CartItemProps> = ({ item }) => {
 					{generateCartItemName(item.name, item.attributes)}
 				</Link>
 				<span className="text-sm text-gray-400 mb-2.5">
-					{t("text-unit-price")} : &nbsp;
+					{t("Unidade")} : &nbsp;
 					{price}
 				</span>
 
