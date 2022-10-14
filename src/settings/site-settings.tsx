@@ -1,9 +1,4 @@
-import { ILFlag } from "@components/icons/ILFlag";
-import { SAFlag } from "@components/icons/SAFlag";
-import { CNFlag } from "@components/icons/CNFlag";
-import { USFlag } from "@components/icons/USFlag";
-import { DEFlag } from "@components/icons/DEFlag";
-import { ESFlag } from "@components/icons/ESFlag";
+
 export const siteSettings = {
 	name: "ChawkBazar",
 	description:
