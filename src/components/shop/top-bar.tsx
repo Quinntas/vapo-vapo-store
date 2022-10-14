@@ -16,27 +16,23 @@ const SearchTopBar = () => {
 	const contentWrapperCSS = dir === "ltr" ? { left: 0 } : { right: 0 };
 	return (
 		<div className="flex justify-between items-center mb-7">
-			<Text variant="pageHeading" className="hidden lg:inline-flex pb-1">
-				{t("text-casual-wear")}
-			</Text>
 			<button
 				className="lg:hidden text-heading text-sm px-4 py-2 font-semibold border border-gray-300 rounded-md flex items-center transition duration-200 ease-in-out focus:outline-none hover:bg-gray-200"
 				onClick={openFilter}
 			>
 				<FilterIcon />
-				<span className="ps-2.5">{t("text-filters")}</span>
+				<span className="ps-2.5">{t("Filtros")}</span>
 			</button>
 			<div className="flex items-center justify-end">
 				<div className="flex-shrink-0 text-body text-xs md:text-sm leading-4 pe-4 md:me-6 ps-2 hidden lg:block">
-					9,608 {t("text-items")}
+					9,608 {t("Itens")}
 				</div>
 				<ListBox
 					options={[
-						{ name: "text-sorting-options", value: "options" },
-						{ name: "text-newest", value: "newest" },
-						{ name: "text-popularity", value: "popularity" },
-						{ name: "text-price-low-high", value: "low-high" },
-						{ name: "text-price-high-low", value: "high-low" },
+						{ name: "Populares", value: "popularity" },
+						{ name: "Novos", value: "newest" },
+						{ name: "Preco ascendente", value: "low-high" },
+						{ name: "Preco descendente", value: "high-low" },
 					]}
 				/>
 			</div>

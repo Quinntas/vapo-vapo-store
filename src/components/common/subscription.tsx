@@ -5,9 +5,9 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "next-i18next";
 
 const data = {
-	title: "common:text-subscribe-heading",
-	description: "common:text-subscribe-description",
-	buttonText: "common:button-subscribe",
+	title: "Quer receber novidades ?",
+	description: "Se inscreva para receber novidades de novos produtos",
+	buttonText: "Se inscreva",
 };
 
 interface Props {
@@ -59,7 +59,7 @@ const Subscription: React.FC<Props> = ({
 			>
 				<div className="flex flex-col sm:flex-row items-start justify-end">
 					<Input
-						placeholderKey="forms:placeholder-email-subscribe"
+						placeholderKey="Seu email"
 						type="email"
 						variant="solid"
 						className="w-full"

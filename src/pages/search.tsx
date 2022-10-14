@@ -18,7 +18,6 @@ export default function Shop() {
 
 	return (
 		<>
-			<ShopDiscount />
 			<Container>
 				<div className={`flex pt-8 pb-16 lg:pb-20`}>
 					<div className="flex-shrink-0 pe-24 hidden lg:block w-96">
@@ -29,13 +28,13 @@ export default function Shop() {
 										href={"/"}
 										activeClassName="font-semibold text-heading"
 									>
-										<a>{t("breadcrumb-home")}</a>
+										<a>{t("Home")}</a>
 									</ActiveLink>
 									<ActiveLink
 										href={ROUTES.SEARCH}
 										activeClassName="font-semibold text-heading"
 									>
-										<a className="capitalize">{t("breadcrumb-search")}</a>
+										<a className="capitalize">{t("Produtos")}</a>
 									</ActiveLink>
 								</BreadcrumbItems>
 							</div>

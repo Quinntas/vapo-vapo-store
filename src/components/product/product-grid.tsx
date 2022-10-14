@@ -49,7 +49,7 @@ export const ProductGrid: FC<ProductGridProps> = ({ className = "" }) => {
 						onClick={() => fetchNextPage()}
 						variant="slim"
 					>
-						{t("button-load-more")}
+						{t("Carregar Mais")}
 					</Button>
 				)}
 			</div>

@@ -1,19 +1,19 @@
 
 export const siteSettings = {
-	name: "ChawkBazar",
+	name: "Vapo Vapo Store",
 	description:
-		"Fastest E-commerce template built with React, NextJS, TypeScript, React-Query and Tailwind CSS.",
+		"Vapo Vapo Store",
 	author: {
-		name: "RedQ, Inc.",
-		websiteUrl: "https://redq.io",
+		name: "Vapo Vapo",
+		websiteUrl: "vapo url",
 		address: "",
 	},
 	logo: {
-		url: "/assets/images/logo.svg",
-		alt: "ChawkBazar",
+		url: "/assets/images/logo-33.png",
+		alt: "vapeize",
 		href: "/",
-		width: 95,
-		height: 30,
+		width: 89,
+		height: 80,
 	},
 	defaultLanguage: "pt",
 	currencyCode: "BRL",
