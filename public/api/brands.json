@@ -2,8 +2,8 @@
   "brands": [
     {
       "id": 1,
-      "name": "Shovia",
-      "slug": "shovia",
+      "name": "Omg",
+      "slug": "Omg",
       "image": {
         "id": 1,
         "thumbnail": "/assets/images/brands/shovia.png",
@@ -12,72 +12,12 @@
     },
     {
       "id": 2,
-      "name": "Fusion",
-      "slug": "fusion",
+      "name": "Nic Salt",
+      "slug": "Nic Salt",
       "image": {
         "id": 1,
-        "thumbnail": "/assets/images/brands/fusion.png",
-        "original": "/assets/images/brands/fusion.png"
-      }
-    },
-    {
-      "id": 3,
-      "name": "Hunter Shoes",
-      "slug": "hunter-shoes",
-      "image": {
-        "id": 1,
-        "thumbnail": "/assets/images/brands/hunter-shoes.png",
-        "original": "/assets/images/brands/hunter-shoes.png"
-      }
-    },
-    {
-      "id": 4,
-      "name": "Club Shoes",
-      "slug": "club-shoes",
-      "image": {
-        "id": 1,
-        "thumbnail": "/assets/images/brands/club-shoes.png",
-        "original": "/assets/images/brands/club-shoes.png"
-      }
-    },
-    {
-      "id": 5,
-      "name": "Hoppister",
-      "slug": "hoppister",
-      "image": {
-        "id": 1,
-        "thumbnail": "/assets/images/brands/hoppister.png",
-        "original": "/assets/images/brands/hoppister.png"
-      }
-    },
-    {
-      "id": 6,
-      "name": "Blaze Fashion",
-      "slug": "blaze-fashion",
-      "image": {
-        "id": 1,
-        "thumbnail": "/assets/images/brands/blaze-fashion.png",
-        "original": "/assets/images/brands/blaze-fashion.png"
-      }
-    },
-    {
-      "id": 7,
-      "name": "Elegance",
-      "slug": "elegance",
-      "image": {
-        "id": 1,
-        "thumbnail": "/assets/images/brands/elegance.png",
-        "original": "/assets/images/brands/elegance.png"
-      }
-    },
-    {
-      "id": 8,
-      "name": "Fashadil",
-      "slug": "fashadil",
-      "image": {
-        "id": 1,
-        "thumbnail": "/assets/images/brands/fashadil.png",
-        "original": "/assets/images/brands/fashadil.png"
+        "thumbnail": "/assets/images/brands/shovia.png",
+        "original": "/assets/images/brands/shovia.png"
       }
     }
   ],
