@@ -6,7 +6,7 @@ import { useTranslation } from "next-i18next";
 const OrderItemCard = ({ product }: { product: OrderItem }) => {
 	const { price: itemTotal } = usePrice({
 		amount: product.price * product.quantity,
-		currencyCode: "USD",
+		currencyCode: "BRL",
 	});
 	return (
 		<tr
@@ -31,7 +31,7 @@ const OrderDetails: React.FC<{ className?: string }> = ({
 	const { price: subtotal } = usePrice(
 		order && {
 			amount: order.total,
-			currencyCode: "USD",
+			currencyCode: "BRL",
 		}
 	);
 	const { price: total } = usePrice(
@@ -39,13 +39,13 @@ const OrderDetails: React.FC<{ className?: string }> = ({
 			amount: order.shipping_fee
 				? order.total + order.shipping_fee
 				: order.total,
-			currencyCode: "USD",
+			currencyCode: "BRL",
 		}
 	);
 	const { price: shipping } = usePrice(
 		order && {
 			amount: order.shipping_fee,
-			currencyCode: "USD",
+			currencyCode: "BRL",
 		}
 	);
 	if (isLoading) return <p>Loading...</p>;
@@ -58,10 +58,10 @@ const OrderDetails: React.FC<{ className?: string }> = ({
 				<thead>
 					<tr>
 						<th className="bg-gray-150 p-4 text-start first:rounded-ts-md w-1/2">
-							{t("text-product")}
+							{t("Produto")}
 						</th>
 						<th className="bg-gray-150 p-4 text-start last:rounded-te-md w-1/2">
-							{t("text-total")}
+							{t("Total")}
 						</th>
 					</tr>
 				</thead>
@@ -72,28 +72,28 @@ const OrderDetails: React.FC<{ className?: string }> = ({
 				</tbody>
 				<tfoot>
 					<tr className="odd:bg-gray-150">
-						<td className="p-4 italic">{t("text-sub-total")}:</td>
+						<td className="p-4 italic">{t("Total")}:</td>
 						<td className="p-4">{subtotal}</td>
 					</tr>
 					<tr className="odd:bg-gray-150">
-						<td className="p-4 italic">{t("text-shipping")}:</td>
+						<td className="p-4 italic">{t("Entrega")}:</td>
 						<td className="p-4">
 							{shipping}
 							<span className="text-[13px] font-normal ps-1.5 inline-block">
-								via Flat rate
+								Metodo de entrega
 							</span>
 						</td>
 					</tr>
 					<tr className="odd:bg-gray-150">
-						<td className="p-4 italic">{t("text-payment-method")}:</td>
+						<td className="p-4 italic">{t("Metodo de Pagamento")}:</td>
 						<td className="p-4">{order?.payment_gateway}</td>
 					</tr>
 					<tr className="odd:bg-gray-150">
-						<td className="p-4 italic">{t("text-total")}:</td>
+						<td className="p-4 italic">{t("Total")}:</td>
 						<td className="p-4">{total}</td>
 					</tr>
 					<tr className="odd:bg-gray-150">
-						<td className="p-4 italic">{t("text-note")}:</td>
+						<td className="p-4 italic">{t("Nota")}:</td>
 						<td className="p-4">new order</td>
 					</tr>
 				</tfoot>

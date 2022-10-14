@@ -31,7 +31,7 @@ const ChangePassword: React.FC = () => {
 	return (
 		<>
 			<h2 className="text-lg md:text-xl xl:text-2xl font-bold text-heading mb-6 xl:mb-8">
-				{t("common:text-change-password")}
+				{t("Troque sua senha")}
 			</h2>
 			<motion.div
 				layout
@@ -48,7 +48,7 @@ const ChangePassword: React.FC = () => {
 				>
 					<div className="flex flex-col space-y-3">
 						<PasswordInput
-							labelKey="forms:label-old-password"
+							labelKey="Senha Antiga"
 							errorKey={errors.oldPassword?.message}
 							{...register("oldPassword", {
 								required: "forms:password-old-required",
@@ -56,7 +56,7 @@ const ChangePassword: React.FC = () => {
 							className="mb-4"
 						/>
 						<PasswordInput
-							labelKey="forms:label-new-password"
+							labelKey="Nova Senha"
 							errorKey={errors.newPassword?.message}
 							{...register("newPassword", {
 								required: "forms:label-new-password",
@@ -71,7 +71,7 @@ const ChangePassword: React.FC = () => {
 								disabled={isLoading}
 								className="h-13 mt-3"
 							>
-								{t("common:text-change-password")}
+								{t("Troque sua Senha")}
 							</Button>
 						</div>
 					</div>

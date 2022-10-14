@@ -7,7 +7,6 @@ import {
 	useUpdateUserMutation,
 	UpdateUserType,
 } from "@framework/customer/use-update-customer";
-import { RadioBox } from "@components/ui/radiobox";
 import { useTranslation } from "next-i18next";
 
 const defaultValues = {};
@@ -36,7 +35,7 @@ const AccountDetails: React.FC = () => {
 			className={`w-full flex flex-col`}
 		>
 			<h2 className="text-lg md:text-xl xl:text-2xl font-bold text-heading mb-6 xl:mb-8">
-				{t("common:text-account-details")}
+				{t("Detalhes da Conta")}
 			</h2>
 			<form
 				onSubmit={handleSubmit(onSubmit)}
@@ -46,7 +45,7 @@ const AccountDetails: React.FC = () => {
 				<div className="flex flex-col space-y-4 sm:space-y-5">
 					<div className="flex flex-col sm:flex-row sm:space-s-3 space-y-4 sm:space-y-0">
 						<Input
-							labelKey="forms:label-first-name"
+							labelKey="Primeiro Nome *"
 							{...register("firstName", {
 								required: "forms:first-name-required",
 							})}
@@ -55,7 +54,7 @@ const AccountDetails: React.FC = () => {
 							errorKey={errors.firstName?.message}
 						/>
 						<Input
-							labelKey="forms:label-last-name"
+							labelKey="Segundo Nome *"
 							{...register("lastName", {
 								required: "forms:last-name-required",
 							})}
@@ -64,18 +63,10 @@ const AccountDetails: React.FC = () => {
 							errorKey={errors.lastName?.message}
 						/>
 					</div>
-					<Input
-						labelKey="forms:label-display-name"
-						{...register("displayName", {
-							required: "forms:display-name-required",
-						})}
-						variant="solid"
-						errorKey={errors.displayName?.message}
-					/>
 					<div className="flex flex-col sm:flex-row sm:space-s-3 space-y-4 sm:space-y-0">
 						<Input
 							type="tel"
-							labelKey="forms:label-phone"
+							labelKey="Numero *"
 							{...register("phoneNumber", {
 								required: "forms:phone-required",
 							})}
@@ -97,23 +88,6 @@ const AccountDetails: React.FC = () => {
 							className="w-full sm:w-1/2"
 							errorKey={errors.email?.message}
 						/>
-					</div>
-					<div className="relative flex flex-col">
-						<span className="mt-2 text-sm text-heading font-semibold block pb-1">
-							{t("common:text-gender")}
-						</span>
-						<div className="mt-2 flex items-center space-s-6">
-							<RadioBox
-								labelKey="forms:label-male"
-								{...register("gender")}
-								value="male"
-							/>
-							<RadioBox
-								labelKey="forms:label-female"
-								{...register("gender")}
-								value="female"
-							/>
-						</div>
 					</div>
 					<div className="relative">
 						<Button

@@ -79,11 +79,11 @@ const Header: React.FC = () => {
 								btnProps={{
 									className:
 										"text-sm xl:text-base text-heading font-semibold focus:outline-none",
-									children: t("text-sign-in"),
+									children: t("Login"),
 									onClick: handleLogin,
 								}}
 							>
-								{t("text-account")}
+								{t("Minha Conta")}
 							</AuthMenu>
 						</div>
 						<CartButton />

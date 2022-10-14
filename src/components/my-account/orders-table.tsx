@@ -10,7 +10,7 @@ const OrdersTable: React.FC = () => {
 	return (
 		<>
 			<h2 className="text-lg md:text-xl xl:text-2xl font-bold text-heading mb-6 xl:mb-8">
-				{t("text-orders")}
+				{t("Pedidos")}
 			</h2>
 			<motion.div
 				layout
@@ -26,19 +26,19 @@ const OrdersTable: React.FC = () => {
 						<thead className="text-sm lg:text-base">
 							<tr>
 								<th className="bg-gray-100 p-4 text-heading font-semibold text-start first:rounded-ts-md">
-									{t("text-order")}
+									{t("Pedido Nº")}
 								</th>
 								<th className="bg-gray-100 p-4 text-heading font-semibold text-start lg:text-center">
-									{t("text-date")}
+									{t("Data")}
 								</th>
 								<th className="bg-gray-100 p-4 text-heading font-semibold text-start lg:text-center">
-									{t("text-status")}
+									{t("Status")}
 								</th>
 								<th className="bg-gray-100 p-4 text-heading font-semibold text-start lg:text-center">
-									{t("text-total")}
+									{t("Total")}
 								</th>
 								<th className="bg-gray-100 p-4 text-heading font-semibold text-start lg:text-end last:rounded-te-md">
-									{t("text-actions")}
+									{t("Acoes")}
 								</th>
 							</tr>
 						</thead>
@@ -66,7 +66,7 @@ const OrdersTable: React.FC = () => {
 										href="/my-account/orders/3203"
 										className="text-sm leading-4 bg-heading text-white px-4 py-2.5 inline-block rounded-md hover:text-white hover:bg-gray-600"
 									>
-										{t("button-view")}
+										{t("Ver")}
 									</Link>
 								</td>
 							</tr>
@@ -93,7 +93,7 @@ const OrdersTable: React.FC = () => {
 										href="/my-account/orders/3204"
 										className="text-sm leading-4 bg-heading text-white px-4 py-2.5 inline-block rounded-md hover:text-white hover:bg-gray-600"
 									>
-										{t("button-view")}
+										{t("Ver")}
 									</Link>
 								</td>
 							</tr>

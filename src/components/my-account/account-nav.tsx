@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import {
-	IoHomeOutline,
 	IoCartOutline,
 	IoPersonOutline,
 	IoSettingsOutline,
@@ -13,23 +12,18 @@ import { useTranslation } from "next-i18next";
 
 const accountMenu = [
 	{
-		slug: ROUTES.ACCOUNT,
-		name: "text-dashboard",
-		icon: <IoHomeOutline className="w-5 h-5" />,
-	},
-	{
 		slug: ROUTES.ORDERS,
-		name: "text-orders",
+		name: "Pedidos",
 		icon: <IoCartOutline className="w-5 h-5" />,
 	},
 	{
 		slug: ROUTES.ACCOUNT_DETAILS,
-		name: "text-account-details",
+		name: "Detalhes da Conta",
 		icon: <IoPersonOutline className="w-5 h-5" />,
 	},
 	{
 		slug: ROUTES.CHANGE_PASSWORD,
-		name: "text-change-password",
+		name: "Troque sua senha",
 		icon: <IoSettingsOutline className="w-5 h-5" />,
 	},
 ];
