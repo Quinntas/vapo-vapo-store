@@ -178,7 +178,7 @@ const ProductSingleDetails: React.FC = () => {
 						disabled={!isSelected}
 						loading={addToCartLoader}
 					>
-						<span className="py-2 3xl:px-8">Add to cart</span>
+						<span className="py-2 3xl:px-8">Adicionar ao Carrinho</span>
 					</Button>
 				</div>
 				<div className="py-6">
@@ -191,7 +191,7 @@ const ProductSingleDetails: React.FC = () => {
 						</li>
 						<li>
 							<span className="font-semibold text-heading inline-block pe-2">
-								Category:
+								Categoria:
 							</span>
 							<Link
 								href="/"
