@@ -38,7 +38,7 @@ const OrdersTable: React.FC = () => {
 									{t("Total")}
 								</th>
 								<th className="bg-gray-100 p-4 text-heading font-semibold text-start lg:text-end last:rounded-te-md">
-									{t("Acoes")}
+									{t("Ações")}
 								</th>
 							</tr>
 						</thead>

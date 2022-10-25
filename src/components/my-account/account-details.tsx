@@ -96,7 +96,7 @@ const AccountDetails: React.FC = () => {
 							disabled={isLoading}
 							className="h-12 mt-3 w-full sm:w-32"
 						>
-							{t("common:button-save")}
+							{t("Salvar")}
 						</Button>
 					</div>
 				</div>
