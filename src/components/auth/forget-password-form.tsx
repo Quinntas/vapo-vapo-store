@@ -70,7 +70,7 @@ const ForgetPasswordForm = () => {
 			<div className="flex flex-col items-center justify-center relative text-sm text-heading mt-8 sm:mt-10 mb-6 sm:mb-7">
 				<hr className="w-full border-gray-300" />
 				<span className="absolute -top-2.5 px-2 bg-white">
-					{t("common:text-or")}
+					{t("Ou")}
 				</span>
 			</div>
 			<div className="text-sm sm:text-base text-body text-center">

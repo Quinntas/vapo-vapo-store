@@ -8,7 +8,7 @@ export default function NewArrivalsProductFeed() {
 
 	return (
 		<ProductsBlock
-			sectionHeading="text-new-arrivals"
+			sectionHeading="Novos na Vapo"
 			products={data}
 			loading={isLoading}
 			error={error?.message}

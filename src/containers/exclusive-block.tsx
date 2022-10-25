@@ -3,20 +3,20 @@ import Link from "@components/ui/link";
 import { useTranslation } from "next-i18next";
 
 const data = {
-	exclusiveName: "text-new-year",
-	year: 2021,
+	exclusiveName: "Novos",
+	year: 2023,
 	exclusiveData: [
 		{
 			id: 1,
 			slug: "/search",
-			buttonText: "button-women-exclusive",
+			buttonText: "Pods Exclusivos",
 			image: "/assets/images/exclusive/women.png",
 			backgroundColor: "bg-gray-150",
 		},
 		{
 			id: 2,
 			slug: "/search",
-			buttonText: "button-men-exclusive",
+			buttonText: "Vapes Exclusivos",
 			image: "/assets/images/exclusive/men.png",
 			backgroundColor: "bg-linenSecondary",
 		},
@@ -67,7 +67,7 @@ const ExclusiveBlock: React.FC<Props> = ({
 							>
 								{item.id !== 2
 									? t(`${data.exclusiveName}`)
-									: t("text-exclusive")}
+									: t("exclusivos")}
 							</div>
 						)}
 
