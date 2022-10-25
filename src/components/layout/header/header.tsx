@@ -42,6 +42,8 @@ const Header: React.FC = () => {
 	}
 
 	useEffect(() => {
+		if (router.pathname == '/age-gate')
+			return
 		const ageGate = Cookies.get('age-gate')
 		if (!ageGate || ageGate ==='false')
 			router.push('age-gate')
