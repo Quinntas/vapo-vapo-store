@@ -1,6 +1,6 @@
 import Container from "@components/ui/container";
 import Layout from "@components/layout/layout";
-import LoginForm from "@components/auth/login-form";
+import AgeGate from "@components/auth/age-gate-form";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { GetStaticProps } from "next";
 
@@ -9,7 +9,7 @@ export default function SignInPage() {
 		<>
 			<Container>
 				<div className="py-16 lg:py-20">
-					<LoginForm />
+					<AgeGate />
 				</div>
 			</Container>
 		</>

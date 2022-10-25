@@ -8,6 +8,9 @@ import { ROUTES } from "@utils/routes";
 import { addActiveScroll } from "@utils/add-active-scroll";
 import dynamic from "next/dynamic";
 import { useTranslation } from "next-i18next";
+import { useEffect } from "react";
+import Cookies from "js-cookie";
+import { useRouter } from "next/router";
 const AuthMenu = dynamic(() => import("./auth-menu"), { ssr: false });
 const CartButton = dynamic(() => import("@components/cart/cart-button"), {
 	ssr: false,
@@ -26,6 +29,7 @@ const Header: React.FC = () => {
 	} = useUI();
 	const { t } = useTranslation("common");
 	const siteHeaderRef = useRef() as DivElementRef;
+	const router = useRouter()
 	addActiveScroll(siteHeaderRef);
 
 	function handleLogin() {
@@ -36,6 +40,12 @@ const Header: React.FC = () => {
 		setDrawerView("MOBILE_MENU");
 		return openSidebar();
 	}
+
+	useEffect(() => {
+		const ageGate = Cookies.get('age-gate')
+		if (!ageGate || ageGate ==='false')
+			router.push('age-gate')
+	  });
 
 	return (
 		<header
