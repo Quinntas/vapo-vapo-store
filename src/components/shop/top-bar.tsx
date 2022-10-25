@@ -17,7 +17,7 @@ const SearchTopBar = () => {
 	return (
 		<div className="flex justify-between items-center mb-7">
 			<Text variant="pageHeading" className="hidden lg:inline-flex pb-1">
-				{t("text-casual-wear")}
+				{t("Produtos")}
 			</Text>
 			<button
 				className="lg:hidden text-heading text-sm px-4 py-2 font-semibold border border-gray-300 rounded-md flex items-center transition duration-200 ease-in-out focus:outline-none hover:bg-gray-200"
@@ -34,8 +34,8 @@ const SearchTopBar = () => {
 					options={[
 						{ name: "Populares", value: "popularity" },
 						{ name: "Novos", value: "newest" },
-						{ name: "Preco ascendente", value: "low-high" },
-						{ name: "Preco descendente", value: "high-low" },
+						{ name: "Preço ascendente", value: "low-high" },
+						{ name: "Preço descendente", value: "high-low" },
 					]}
 				/>
 			</div>

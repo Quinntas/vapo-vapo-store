@@ -66,7 +66,7 @@ const AccountDetails: React.FC = () => {
 					<div className="flex flex-col sm:flex-row sm:space-s-3 space-y-4 sm:space-y-0">
 						<Input
 							type="tel"
-							labelKey="Numero *"
+							labelKey="Número *"
 							{...register("phoneNumber", {
 								required: "forms:phone-required",
 							})}

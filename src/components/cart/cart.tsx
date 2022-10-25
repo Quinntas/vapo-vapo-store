@@ -53,7 +53,7 @@ export default function Cart() {
 				>
 					<EmptyCart />
 					<h3 className="text-lg text-heading font-bold pt-8">
-						{t("Seu Carrinho esta Vazio")}
+						{t("Seu Carrinho Está Vazio")}
 					</h3>
 				</motion.div>
 			)}

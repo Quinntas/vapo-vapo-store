@@ -41,7 +41,7 @@ const LoginForm: React.FC = () => {
 					<Logo />
 				</div>
 				<p className="text-sm md:text-base text-body mt-2 mb-8 sm:mb-10">
-					{t("Faca login com o seu email e senha")}
+					{t("Faça login com o seu email e senha")}
 				</p>
 			</div>
 			<form
@@ -118,7 +118,7 @@ const LoginForm: React.FC = () => {
 				</span>
 			</div>
 			<div className="text-sm sm:text-base text-body text-center mt-5 mb-1">
-				{t("Ainda nao possui uma conta ?")}{" "}
+				{t("Ainda não possui uma conta ?")}{" "}
 				<button
 					type="button"
 					className="text-sm sm:text-base text-heading underline font-bold hover:no-underline focus:outline-none"

@@ -2,11 +2,11 @@
 export const siteSettings = {
 	name: "Vapo Vapo Store",
 	description:
-		"Vapo Vapo Store",
+		"Vapo Vapo Store, Tabacaria.",
 	author: {
 		name: "Vapo Vapo",
-		websiteUrl: "vapo url",
-		address: "",
+		websiteUrl: "https://www.instagram.com/vapovapostore/",
+		address: "vapovapostoremcp@gmail.com",
 	},
 	logo: {
 		url: "/assets/images/logo-33.png",

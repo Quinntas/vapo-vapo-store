@@ -6,9 +6,6 @@ import Layout from '@components/layout/layout';
 import BannerWithProducts from '@containers/banner-with-products';
 import BannerBlock from '@containers/banner-block';
 import Divider from '@components/ui/divider';
-import DownloadApps from '@components/common/download-apps';
-import Support from '@components/common/support';
-import Instagram from '@components/common/instagram';
 import ProductsFlashSaleBlock from '@containers/product-flash-sale-block';
 import ProductsFeatured from '@containers/products-featured';
 import BannerSliderBlock from '@containers/banner-slider-block';
@@ -51,9 +48,6 @@ export default function Home() {
         />
         <ExclusiveBlock />
         <NewArrivalsProductFeed />
-        <DownloadApps />
-        <Support />
-        <Instagram />
         <Subscription className="bg-opacity-0 px-5 sm:px-16 xl:px-0 py-12 md:py-14 xl:py-16" />
       </Container>
       <Divider className="mb-0" />

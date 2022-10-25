@@ -1,18 +1,18 @@
 export const faq = [
   {
-    titleKey: "faq-one-title",
-    contentKey: "faq-one-content",
+    titleKey: "É seguro ?",
+    contentKey: "sim",
   },
   {
-    titleKey: "faq-two-title",
-    contentKey: "faq-two-content",
+    titleKey: "Tem certeza ?",
+    contentKey: "As vezes",
   },
   {
-    titleKey: "faq-three-title",
-    contentKey: "faq-three-content",
+    titleKey: "Onde pego minha encomenda",
+    contentKey: "Na sua casa",
   },
   {
-    titleKey: "faq-four-title",
-    contentKey: "faq-four-content",
+    titleKey: "Como faz pra comprar",
+    contentKey: "No wpp",
   },
 ];

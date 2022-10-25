@@ -39,7 +39,7 @@ const SignUpForm: React.FC = () => {
 					<Logo />
 				</div>
 				<p className="text-sm md:text-base text-body mt-2 mb-8 sm:mb-10">
-					{t("Ao se registrar, voce concorda com os nossos")}{" "}
+					{t("Ao se registrar, você concorda com os nossos")}{" "}
 					<Link
 						href={ROUTES.TERMS}
 						className="text-heading underline hover:no-underline focus:outline-none"
@@ -110,13 +110,13 @@ const SignUpForm: React.FC = () => {
 				</span>
 			</div>
 			<div className="text-sm sm:text-base text-body text-center mt-5 mb-1">
-				{t("Ja tem uma conta ?")}{" "}
+				{t("Já tem uma conta ?")}{" "}
 				<button
 					type="button"
 					className="text-sm sm:text-base text-heading underline font-bold hover:no-underline focus:outline-none"
 					onClick={handleSignIn}
 				>
-					{t("Faca Login")}
+					{t("Faça Login")}
 				</button>
 			</div>
 		</div>
