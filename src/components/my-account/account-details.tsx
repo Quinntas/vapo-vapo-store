@@ -45,22 +45,22 @@ const AccountDetails: React.FC = () => {
 				<div className="flex flex-col space-y-4 sm:space-y-5">
 					<div className="flex flex-col sm:flex-row sm:space-s-3 space-y-4 sm:space-y-0">
 						<Input
-							labelKey="Primeiro Nome *"
-							{...register("firstName", {
-								required: "forms:first-name-required",
+							labelKey="Nome *"
+							{...register("fullName", {
+								required: "Este campo é obrigatorio",
 							})}
 							variant="solid"
 							className="w-full sm:w-1/2"
-							errorKey={errors.firstName?.message}
+							errorKey={errors.fullName?.message}
 						/>
 						<Input
-							labelKey="Segundo Nome *"
-							{...register("lastName", {
-								required: "forms:last-name-required",
+							labelKey="Endereço *"
+							{...register("address", {
+								required: "Este campo é obrigatorio",
 							})}
 							variant="solid"
 							className="w-full sm:w-1/2"
-							errorKey={errors.lastName?.message}
+							errorKey={errors.address?.message}
 						/>
 					</div>
 					<div className="flex flex-col sm:flex-row sm:space-s-3 space-y-4 sm:space-y-0">
@@ -68,7 +68,7 @@ const AccountDetails: React.FC = () => {
 							type="tel"
 							labelKey="Número *"
 							{...register("phoneNumber", {
-								required: "forms:phone-required",
+								required: "Este campo é obrigatorio",
 							})}
 							variant="solid"
 							className="w-full sm:w-1/2"
@@ -78,10 +78,10 @@ const AccountDetails: React.FC = () => {
 							type="email"
 							labelKey="forms:label-email-star"
 							{...register("email", {
-								required: "forms:email-required",
+								required: "Este campo é obrigatorio",
 								pattern: {
 									value: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-									message: "forms:email-error",
+									message: "Email está no formato errado",
 								},
 							})}
 							variant="solid"
