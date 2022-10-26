@@ -7,10 +7,8 @@ import { useUI } from "@contexts/ui.context";
 import { useSignUpMutation, SignUpInputType } from "@framework/auth/use-signup";
 import Link from "@components/ui/link";
 import { ROUTES } from "@utils/routes";
-import { useTranslation } from "next-i18next";
 
 const SignUpForm: React.FC = () => {
-	const { t } = useTranslation();
 	const { mutate: signUp, isLoading } = useSignUpMutation();
 	const { setModalView, openModal, closeModal } = useUI();
 	const {
@@ -24,13 +22,13 @@ const SignUpForm: React.FC = () => {
 		return openModal();
 	}
 
-	function onSubmit({ name, email, password }: SignUpInputType) {
+	function onSubmit({ fullName, email, password }: SignUpInputType) {
 		signUp({
-			name,
+			fullName,
 			email,
 			password,
 		});
-		console.log(name, email, password, "sign form values");
+		console.log(fullName, email, password, "sign form values");
 	}
 	return (
 		<div className="py-5 px-5 sm:px-8 bg-white mx-auto rounded-lg w-full sm:w-96 md:w-450px border border-gray-300">
@@ -39,19 +37,19 @@ const SignUpForm: React.FC = () => {
 					<Logo />
 				</div>
 				<p className="text-sm md:text-base text-body mt-2 mb-8 sm:mb-10">
-					{t("Ao se registrar, você concorda com os nossos")}{" "}
+					{"Ao se registrar, você concorda com os nossos"}{" "}
 					<Link
 						href={ROUTES.TERMS}
 						className="text-heading underline hover:no-underline focus:outline-none"
 					>
-						{t("termos")}
+						{"termos"}
 					</Link>{" "}
 					&amp;{" "}
 					<Link
 						href={ROUTES.POLICY}
 						className="text-heading underline hover:no-underline focus:outline-none"
 					>
-						{t("servicos")}
+						{"servicos"}
 					</Link>
 				</p>
 			</div>
@@ -65,21 +63,21 @@ const SignUpForm: React.FC = () => {
 						labelKey="Nome"
 						type="text"
 						variant="solid"
-						{...register("name", {
-							required: "forms:name-required",
+						{...register("fullName", {
+							required: "Este campo é obrigatorio",
 						})}
-						errorKey={errors.name?.message}
+						errorKey={errors.fullName?.message}
 					/>
 					<Input
 						labelKey="Email"
 						type="email"
 						variant="solid"
 						{...register("email", {
-							required: `${t("forms:email-required")}`,
+							required: "Este campo é obrigatorio",
 							pattern: {
 								value:
 									/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-								message: t("forms:email-error"),
+								message: "Porfavor informe um email valido",
 							},
 						})}
 						errorKey={errors.email?.message}
@@ -88,7 +86,7 @@ const SignUpForm: React.FC = () => {
 						labelKey="Senha"
 						errorKey={errors.password?.message}
 						{...register("password", {
-							required: `${t("forms:password-required")}`,
+							required: "Este campo é obrigatorio",
 						})}
 					/>
 					<div className="relative">
@@ -98,7 +96,7 @@ const SignUpForm: React.FC = () => {
 							disabled={isLoading}
 							className="h-11 md:h-12 w-full mt-2"
 						>
-							{t("Registrar")}
+							{"Registrar"}
 						</Button>
 					</div>
 				</div>
@@ -106,17 +104,17 @@ const SignUpForm: React.FC = () => {
 			<div className="flex flex-col items-center justify-center relative text-sm text-heading mt-6 mb-3.5">
 				<hr className="w-full border-gray-300" />
 				<span className="absolute -top-2.5 px-2 bg-white">
-					{t("Ou")}
+					{"Ou"}
 				</span>
 			</div>
 			<div className="text-sm sm:text-base text-body text-center mt-5 mb-1">
-				{t("Já tem uma conta ?")}{" "}
+				{"Já tem uma conta ?"}{" "}
 				<button
 					type="button"
 					className="text-sm sm:text-base text-heading underline font-bold hover:no-underline focus:outline-none"
 					onClick={handleSignIn}
 				>
-					{t("Faça Login")}
+					{"Faça Login"}
 				</button>
 			</div>
 		</div>
