@@ -3,17 +3,20 @@ import { encryptValue } from '@utils/encryption';
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { Prisma } from '@prisma/client';
 import { API_ENDPOINTS } from "@framework/utils/api-endpoints";
+import moment from 'moment';
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
     if (req.method !== "POST") {
         return res.status(405).json({ sucess: false });
     }
 
+    const date = moment().format("DD/MM/YYYY-HH:MM:SS");
+
     let newUser = {
         phoneNumber: "",
         Address: "",
-        createdOn: "",
-        modifiedOn: "",
+        createdOn: date,
+        modifiedOn: date,
         password: encryptValue(req.body.password, "q263fWjTOqPh"),
         email: req.body.email,
         fullName: req.body.fullName
