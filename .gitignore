@@ -8,6 +8,12 @@
 # testing
 /coverage
 
+# db
+#/prisma
+
+# apis
+#/src/pages/api
+
 # next.js
 /.next/
 /out/

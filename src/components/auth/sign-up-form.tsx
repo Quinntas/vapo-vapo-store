@@ -71,7 +71,7 @@ const SignUpForm: React.FC = () => {
 						errorKey={errors.name?.message}
 					/>
 					<Input
-						labelKey="forms:label-email"
+						labelKey="Email"
 						type="email"
 						variant="solid"
 						{...register("email", {

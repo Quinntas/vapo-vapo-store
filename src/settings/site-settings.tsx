@@ -281,7 +281,7 @@ export const siteSettings = {
 							{
 								id: 4,
 								path: "/search?q=handbags-wallets",
-								label: "Case/Estojo",
+								label: "Cases",
 							},
 						],
 					},

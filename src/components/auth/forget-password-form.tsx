@@ -49,7 +49,7 @@ const ForgetPasswordForm = () => {
 				noValidate
 			>
 				<Input
-					labelKey="forms:label-email"
+					labelKey="Email"
 					type="email"
 					variant="solid"
 					className="mb-4"
