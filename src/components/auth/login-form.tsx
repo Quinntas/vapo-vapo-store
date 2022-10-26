@@ -58,7 +58,7 @@ const LoginForm: React.FC = () => {
 							pattern: {
 								value:
 									/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-								message: t("forms:email-error"),
+								message: t("Por favor informe um email valido"),
 							},
 						})}
 						errorKey={errors.email?.message}
@@ -67,7 +67,7 @@ const LoginForm: React.FC = () => {
 						labelKey="Senha"
 						errorKey={errors.password?.message}
 						{...register("password", {
-							required: `${t("forms:password-required")}`,
+							required: `${t("Este campo é obrigatorio")}`,
 						})}
 					/>
 					<div className="flex items-center justify-center">
