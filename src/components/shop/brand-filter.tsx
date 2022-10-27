@@ -2,10 +2,8 @@ import { CheckBox } from "@components/ui/checkbox";
 import { useBrandsQuery } from "@framework/brand/get-all-brands";
 import { useRouter } from "next/router";
 import React from "react";
-import { useTranslation } from "next-i18next";
 
 export const BrandFilter = () => {
-	const { t } = useTranslation("common");
 	const router = useRouter();
 	const { pathname, query } = router;
 	const { data, isLoading, error } = useBrandsQuery({
@@ -45,7 +43,7 @@ export const BrandFilter = () => {
 	return (
 		<div className="block border-b border-gray-300 pb-7 mb-7">
 			<h3 className="text-heading text-sm md:text-base font-semibold mb-7">
-				{t("text-brands")}
+				{"Marca"}
 			</h3>
 			<div className="mt-2 flex flex-col space-y-4">
 				{items?.map((item: any) => (

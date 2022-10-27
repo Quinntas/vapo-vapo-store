@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import {
-	IoCartOutline,
 	IoPersonOutline,
 	IoSettingsOutline,
 	IoLogOutOutline,
@@ -11,11 +10,6 @@ import { useLogoutMutation } from "@framework/auth/use-logout";
 import { useTranslation } from "next-i18next";
 
 const accountMenu = [
-	{
-		slug: ROUTES.ORDERS,
-		name: "Pedidos",
-		icon: <IoCartOutline className="w-5 h-5" />,
-	},
 	{
 		slug: ROUTES.ACCOUNT_DETAILS,
 		name: "Detalhes da Conta",

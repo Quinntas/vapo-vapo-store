@@ -9,11 +9,9 @@ import ActiveLink from "@components/ui/active-link";
 import { BreadcrumbItems } from "@components/common/breadcrumb";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { ROUTES } from "@utils/routes";
-import { useTranslation } from "next-i18next";
 import { GetStaticProps } from "next";
 
 export default function Shop() {
-	const { t } = useTranslation("common");
 
 	return (
 		<>
@@ -27,13 +25,13 @@ export default function Shop() {
 										href={"/"}
 										activeClassName="font-semibold text-heading"
 									>
-										<a>{t("Home")}</a>
+										<a>{"Home"}</a>
 									</ActiveLink>
 									<ActiveLink
 										href={ROUTES.SEARCH}
 										activeClassName="font-semibold text-heading"
 									>
-										<a className="capitalize">{t("Produtos")}</a>
+										<a className="capitalize">{"Produtos"}</a>
 									</ActiveLink>
 								</BreadcrumbItems>
 							</div>

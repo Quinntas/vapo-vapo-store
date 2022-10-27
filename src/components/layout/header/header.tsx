@@ -4,14 +4,11 @@ import { siteSettings } from "@settings/site-settings";
 import HeaderMenu from "@components/layout/header/header-menu";
 import Logo from "@components/ui/logo";
 import { useUI } from "@contexts/ui.context";
-import { ROUTES } from "@utils/routes";
 import { addActiveScroll } from "@utils/add-active-scroll";
 import dynamic from "next/dynamic";
-import { useTranslation } from "next-i18next";
 import { useEffect } from "react";
 import Cookies from "js-cookie";
 import { useRouter } from "next/router";
-const AuthMenu = dynamic(() => import("./auth-menu"), { ssr: false });
 const CartButton = dynamic(() => import("@components/cart/cart-button"), {
 	ssr: false,
 });
@@ -23,19 +20,11 @@ const Header: React.FC = () => {
 		openSidebar,
 		setDrawerView,
 		openSearch,
-		openModal,
-		setModalView,
-		isAuthorized,
 	} = useUI();
-	const { t } = useTranslation("common");
 	const siteHeaderRef = useRef() as DivElementRef;
 	const router = useRouter()
 	addActiveScroll(siteHeaderRef);
 
-	function handleLogin() {
-		setModalView("LOGIN_VIEW");
-		return openModal();
-	}
 	function handleMobileMenu() {
 		setDrawerView("MOBILE_MENU");
 		return openSidebar();
@@ -45,9 +34,9 @@ const Header: React.FC = () => {
 		if (router.pathname == '/age-gate')
 			return
 		const ageGate = Cookies.get('age-gate')
-		if (!ageGate || ageGate ==='false')
+		if (!ageGate || ageGate === 'false')
 			router.push('age-gate')
-	  });
+	});
 
 	return (
 		<header
@@ -83,21 +72,6 @@ const Header: React.FC = () => {
 						>
 							<SearchIcon />
 						</button>
-						<div className="-mt-0.5 flex-shrink-0">
-							<AuthMenu
-								isAuthorized={isAuthorized}
-								href={ROUTES.ACCOUNT}
-								className="text-sm xl:text-base text-heading font-semibold"
-								btnProps={{
-									className:
-										"text-sm xl:text-base text-heading font-semibold focus:outline-none",
-									children: t("Login"),
-									onClick: handleLogin,
-								}}
-							>
-								{t("Minha Conta")}
-							</AuthMenu>
-						</div>
 						<CartButton />
 					</div>
 				</div>
