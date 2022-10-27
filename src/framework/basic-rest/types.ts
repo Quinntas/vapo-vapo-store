@@ -24,7 +24,7 @@ export type QueryOptionsType = {
   text?: string;
   category?: string;
   status?: string;
-  limit?: number;
+  per_page?: number;
 };
 
 export type QueryParamsType = {

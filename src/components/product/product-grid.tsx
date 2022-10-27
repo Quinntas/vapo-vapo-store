@@ -4,7 +4,7 @@ import type { FC } from "react";
 import { useProductsQuery } from "@framework/product/get-all-products";
 import { useRouter } from "next/router";
 import ProductFeedLoader from "@components/ui/loaders/product-feed-loader";
-import { useTranslation } from "next-i18next";
+
 interface ProductGridProps {
 	className?: string;
 }
@@ -17,10 +17,9 @@ export const ProductGrid: FC<ProductGridProps> = ({ className = "" }) => {
 		hasNextPage,
 		data,
 		error,
-	} = useProductsQuery({ limit: 10, ...query });
+	} = useProductsQuery({ per_page: 10, ...query });
 	if (error) return <p>{error.message}</p>;
 
-	const { t } = useTranslation("common");
 
 	return (
 		<>
@@ -49,7 +48,7 @@ export const ProductGrid: FC<ProductGridProps> = ({ className = "" }) => {
 						onClick={() => fetchNextPage()}
 						variant="slim"
 					>
-						{t("Carregar Mais")}
+						{"Carregar Mais"}
 					</Button>
 				)}
 			</div>
