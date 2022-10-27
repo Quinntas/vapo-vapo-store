@@ -6,11 +6,9 @@ import { CheckBox } from "@components/ui/checkbox";
 import Button from "@components/ui/button";
 import Router from "next/router";
 import { ROUTES } from "@utils/routes";
-import { useTranslation } from "next-i18next";
 
 interface CheckoutInputType {
-	firstName: string;
-	lastName: string;
+	fullName: string;
 	phone: string;
 	email: string;
 	address: string;
@@ -21,7 +19,6 @@ interface CheckoutInputType {
 }
 
 const CheckoutForm: React.FC = () => {
-	const { t } = useTranslation();
 	const { mutate: updateUser, isLoading } = useCheckoutMutation();
 	const {
 		register,
@@ -36,7 +33,7 @@ const CheckoutForm: React.FC = () => {
 	return (
 		<>
 			<h2 className="text-lg md:text-xl xl:text-2xl font-bold text-heading mb-6 xl:mb-8">
-				{t("Endereco para Entrega")}
+				{"Endereço para entrega"}
 			</h2>
 			<form
 				onSubmit={handleSubmit(onSubmit)}
@@ -46,28 +43,27 @@ const CheckoutForm: React.FC = () => {
 				<div className="flex flex-col space-y-4 lg:space-y-5">
 					<div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0">
 						<Input
-							labelKey="Primeiro Nome *"
-							{...register("firstName", {
-								required: "forms:first-name-required",
+							labelKey="Nome completo *"
+							{...register("fullName", {
+								required: "Este campo é obrigatorio",
 							})}
-							errorKey={errors.firstName?.message}
+							errorKey={errors.fullName?.message}
 							variant="solid"
 							className="w-full lg:w-1/2 "
-						/>
-						<Input
-							labelKey="Ultimo Nome *"
-							{...register("lastName", {
-								required: "forms:last-name-required",
+						/><Input
+							labelKey="CEP *"
+							{...register("zipCode", {
+								required: "Este campo é obrigatorio",
 							})}
-							errorKey={errors.lastName?.message}
+							errorKey={errors.zipCode?.message}
 							variant="solid"
 							className="w-full lg:w-1/2 lg:ms-3 mt-2 md:mt-0"
 						/>
 					</div>
 					<Input
-						labelKey="Endereco *"
+						labelKey="Endereço *"
 						{...register("address", {
-							required: "forms:address-required",
+							required: "Este campo é obrigatorio",
 						})}
 						errorKey={errors.address?.message}
 						variant="solid"
@@ -75,9 +71,9 @@ const CheckoutForm: React.FC = () => {
 					<div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0">
 						<Input
 							type="tel"
-							labelKey="Numero *"
+							labelKey="Némero *"
 							{...register("phone", {
-								required: "forms:phone-required",
+								required: "Este campo é obrigatorio",
 							})}
 							errorKey={errors.phone?.message}
 							variant="solid"
@@ -88,24 +84,15 @@ const CheckoutForm: React.FC = () => {
 							type="email"
 							labelKey="forms:label-email-star"
 							{...register("email", {
-								required: "forms:email-required",
+								required: "Este campo é obrigatorio",
 								pattern: {
 									value: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-									message: "forms:email-error",
+									message: "Porfavor informe um email valido",
 								},
 							})}
 							errorKey={errors.email?.message}
 							variant="solid"
 							className="w-full lg:w-1/2 lg:ms-3 mt-2 md:mt-0"
-						/>
-					</div>
-					<div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0">
-
-						<Input
-							labelKey="CEP"
-							{...register("zipCode")}
-							variant="solid"
-							className="w-full lg:w-1/2 "
 						/>
 					</div>
 					<div className="relative flex items-center ">
@@ -123,7 +110,7 @@ const CheckoutForm: React.FC = () => {
 							loading={isLoading}
 							disabled={isLoading}
 						>
-							{t("Comprar")}
+							{"Comprar"}
 						</Button>
 					</div>
 				</div>

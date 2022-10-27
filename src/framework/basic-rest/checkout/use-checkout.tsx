@@ -3,8 +3,7 @@
 import { useMutation } from "react-query";
 
 export interface CheckoutInputType {
-  firstName: string;
-  lastName: string;
+  fullName: string;
   phone: string;
   email: string;
   address: string;
