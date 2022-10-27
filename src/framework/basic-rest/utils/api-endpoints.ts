@@ -1,7 +1,9 @@
 export const API_ENDPOINTS = {
   LOGIN: "/login",
   REGISTER: "/register",
+  UPDATE: "/update",
   LOGOUT: "/logout",
+  CHANGEPASS: "/update-password",
   FORGET_PASSWORD: "/forget-password",
   CATEGORIES: "/categories.json",
   FEATURED_CATEGORIES: "/featured_categories.json",

@@ -7,12 +7,11 @@ import {
 	useUpdateUserMutation,
 	UpdateUserType,
 } from "@framework/customer/use-update-customer";
-import { useTranslation } from "next-i18next";
+import Cookies from "js-cookie";
 
 const defaultValues = {};
 const AccountDetails: React.FC = () => {
 	const { mutate: updateUser, isLoading } = useUpdateUserMutation();
-	const { t } = useTranslation();
 	const {
 		register,
 		handleSubmit,
@@ -21,7 +20,12 @@ const AccountDetails: React.FC = () => {
 		defaultValues,
 	});
 	function onSubmit(input: UpdateUserType) {
-		updateUser(input);
+		//updateUser(input);
+		const auth_token = Cookies.get('auth_token')
+		if (auth_token) {
+			input.cookie = auth_token
+			updateUser(input)
+		}
 	}
 
 	return (
@@ -35,7 +39,7 @@ const AccountDetails: React.FC = () => {
 			className={`w-full flex flex-col`}
 		>
 			<h2 className="text-lg md:text-xl xl:text-2xl font-bold text-heading mb-6 xl:mb-8">
-				{t("Detalhes da Conta")}
+				{"Detalhes da conta"}
 			</h2>
 			<form
 				onSubmit={handleSubmit(onSubmit)}
@@ -96,7 +100,7 @@ const AccountDetails: React.FC = () => {
 							disabled={isLoading}
 							className="h-12 mt-3 w-full sm:w-32"
 						>
-							{t("Salvar")}
+							{"Salvar"}
 						</Button>
 					</div>
 				</div>

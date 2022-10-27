@@ -1,5 +1,5 @@
-// import { API_ENDPOINTS } from "@framework/utils/api-endpoints";
-// import http from "@framework/utils/http";
+import { API_ENDPOINTS } from "@framework/utils/api-endpoints";
+import http from "@framework/utils/http";
 import { useMutation } from "react-query";
 
 export interface UpdateUserType {
@@ -10,18 +10,18 @@ export interface UpdateUserType {
   password: string;
   confirmPassword: string;
   identifyAs: string;
+  cookie: string | undefined
 }
 async function updateUser(input: UpdateUserType) {
-  // return http.post(API_ENDPOINTS.ChangeEmail, input);
-  return input;
+  return http.post(API_ENDPOINTS.UPDATE, input);
 }
 export const useUpdateUserMutation = () => {
   return useMutation((input: UpdateUserType) => updateUser(input), {
-    onSuccess: (data) => {
-      console.log(data, "UpdateUser success response");
+    onSuccess: () => {
+      console.log("UpdateUser success response");
     },
-    onError: (data) => {
-      console.log(data, "UpdateUser error response");
+    onError: () => {
+      console.log("UpdateUser error response");
     },
   });
 };

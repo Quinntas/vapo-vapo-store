@@ -8,6 +8,7 @@ import {
 	ChangePasswordInputType,
 } from "@framework/customer/use-change-password";
 import { useTranslation } from "next-i18next";
+import Cookies from "js-cookie";
 
 const defaultValues = {
 	oldPassword: "",
@@ -25,7 +26,11 @@ const ChangePassword: React.FC = () => {
 		defaultValues,
 	});
 	function onSubmit(input: ChangePasswordInputType) {
-		changePassword(input);
+		const auth_token = Cookies.get('auth_token')
+		if (auth_token) {
+			input.cookie = auth_token
+			changePassword(input)
+		}
 	}
 	const { t } = useTranslation();
 	return (
