@@ -6,7 +6,7 @@ export const siteSettings = {
 	author: {
 		name: "Vapo Vapo",
 		websiteUrl: "https://www.instagram.com/vapovapostore/",
-		address: "vapovapostoremcp@gmail.com",
+		address: "",
 	},
 	logo: {
 		url: "/assets/images/logo-33.png",

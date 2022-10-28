@@ -31,13 +31,11 @@ export const ProductGrid: FC<ProductGridProps> = ({ className = "" }) => {
 				) : (
 					data?.pages?.map((page) => {
 						return page?.data?.map((product) => (
-							<>
-								{product.quantity != 0 ? <ProductCard
-									key={'product-key-' + product.id}
-									product={product}
-									variant="grid"
-								/> : <></>}
-							</>
+							<ProductCard
+								key={'product-key-' + product.id}
+								product={product}
+								variant="grid"
+							/>
 						));
 					})
 				)}

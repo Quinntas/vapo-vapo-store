@@ -1,7 +1,6 @@
 import { QueryOptionsType, ProductVapo } from "@framework/types";
 import { API_ENDPOINTS } from "@framework/utils/api-endpoints";
 import http from "@framework/utils/http";
-import shuffle from "lodash/shuffle";
 import { useInfiniteQuery } from "react-query";
 type PaginatedProduct = {
 	data: ProductVapo[];
@@ -10,8 +9,9 @@ type PaginatedProduct = {
 const fetchProducts = async ({ queryKey }: any) => {
 	const [_key, _params] = queryKey;
 	const { data } = await http.get(API_ENDPOINTS.PRODUCTS);
+	const returnData = data.filter((item: any) => item.quantity !== 0);
 	return {
-		data: shuffle(data),
+		data: returnData,
 		paginatorInfo: {
 			nextPageUrl: "",
 		},
