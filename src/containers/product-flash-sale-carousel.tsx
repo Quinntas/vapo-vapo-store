@@ -85,7 +85,7 @@ const ProductsFlashSaleCarousel: React.FC<ProductsProps> = ({
   date,
 }) => {
   const { data, isLoading, error } = useFlashSaleProductsQuery({
-    limit: 10,
+    per_page: 10,
   });
   return (
     <div className={`${className} pt-5 md:pt-6 lg:pt-7 pb-5 lg:pb-7s  `}>
@@ -105,21 +105,21 @@ const ProductsFlashSaleCarousel: React.FC<ProductsProps> = ({
         >
           {isLoading && data?.productFlashSellGridTwo?.length
             ? Array.from({ length: 10 }).map((_, idx) => (
-                <ProductCardGridLoader
-                  key={idx}
-                  uniqueKey={`flash-sale-${idx}`}
-                />
-              ))
+              <ProductCardGridLoader
+                key={idx}
+                uniqueKey={`flash-sale-${idx}`}
+              />
+            ))
             : data?.productFlashSellGridTwo?.map((product: any) => (
-                <SwiperSlide key={`product--key-${product.id}`}>
-                  <ProductCard
-                    product={product}
-                    imgWidth={324}
-                    imgHeight={324}
-                    variant="gridSlim"
-                  />
-                </SwiperSlide>
-              ))}
+              <SwiperSlide key={`product--key-${product.id}`}>
+                <ProductCard
+                  product={product}
+                  imgWidth={324}
+                  imgHeight={324}
+                  variant="gridSlim"
+                />
+              </SwiperSlide>
+            ))}
         </Carousel>
       )}
     </div>

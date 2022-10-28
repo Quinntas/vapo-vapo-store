@@ -18,14 +18,14 @@ const ProductsWithFlashSale: React.FC<Props> = ({
 }) => {
 	const { width } = useWindowSize();
 	const { data, isLoading, error } = useTopSellerProductsQuery({
-		limit: 10,
+		per_page: 10,
 	});
 
 	const {
 		data: flashSellProduct,
 		isLoading: flashSellProductLoading,
 	} = useFlashSaleProductsQuery({
-		limit: 10,
+		per_page: 10,
 	});
 
 	return (

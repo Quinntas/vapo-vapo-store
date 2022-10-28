@@ -3,7 +3,7 @@ import { useBestSellerProductsQuery } from "@framework/product/get-all-best-sell
 
 export default function BestSellerProductFeed() {
 	const { data, isLoading, error } = useBestSellerProductsQuery({
-		limit: 10,
+		per_page: 10,
 	});
 
 	return (

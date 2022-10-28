@@ -43,7 +43,7 @@ const FlashSaleBlock: React.FC<Props> = ({
 	className = "mb-12 lg:mb-14 xl:mb-7",
 }) => {
 	const { data, isLoading, error } = useFlashSaleProductsQuery({
-		limit: 10,
+		per_page: 10,
 	});
 
 	return (

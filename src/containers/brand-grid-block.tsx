@@ -18,7 +18,7 @@ const BrandGridBlock: React.FC<BrandProps> = ({
   limit = 16,
 }) => {
   const { data, isLoading, error } = useBrandsQuery({
-    limit: limit,
+    per_page: limit,
   });
   const brands = data?.brandsGrid;
   const columnClasses =
@@ -36,13 +36,13 @@ const BrandGridBlock: React.FC<BrandProps> = ({
         >
           {isLoading
             ? Array.from({ length: limit }).map((_, idx) => (
-                <BrandCardLoader key={idx} uniqueKey={`top-brand-${idx}`} />
-              ))
+              <BrandCardLoader key={idx} uniqueKey={`top-brand-${idx}`} />
+            ))
             : brands
-                ?.slice(0, limit)
-                .map((brand) => (
-                  <BrandCard key={`brand--key${brand.id}`} brand={brand} />
-                ))}
+              ?.slice(0, limit)
+              .map((brand) => (
+                <BrandCard key={`brand--key${brand.id}`} brand={brand} />
+              ))}
         </div>
       )}
     </div>

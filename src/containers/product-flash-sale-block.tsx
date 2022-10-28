@@ -56,7 +56,7 @@ const ProductsFlashSaleBlock: React.FC<ProductsProps> = ({
 	date = "2023-03-01T01:02:03",
 }) => {
 	const { data, isLoading, error } = useFlashSaleProductsQuery({
-		limit: 10,
+		per_page: 10,
 	});
 	return (
 		<div
@@ -72,20 +72,20 @@ const ProductsFlashSaleBlock: React.FC<ProductsProps> = ({
 				<div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-x-3 md:gap-x-5 xl:gap-x-7 gap-y-4 lg:gap-y-5 xl:lg:gap-y-6 2xl:gap-y-8">
 					{isLoading && data?.productFlashSellGridTwo?.length
 						? Array.from({ length: 10 }).map((_, idx) => (
-								<ProductCardGridLoader
-									key={idx}
-									uniqueKey={`flash-sale-${idx}`}
-								/>
-						  ))
+							<ProductCardGridLoader
+								key={idx}
+								uniqueKey={`flash-sale-${idx}`}
+							/>
+						))
 						: data?.productFlashSellGridTwo?.map((product: any) => (
-								<ProductCard
-									key={`product--key${product.id}`}
-									product={product}
-									imgWidth={324}
-									imgHeight={324}
-									variant="gridSlim"
-								/>
-						  ))}
+							<ProductCard
+								key={`product--key${product.id}`}
+								product={product}
+								imgWidth={324}
+								imgHeight={324}
+								variant="gridSlim"
+							/>
+						))}
 				</div>
 			)}
 		</div>

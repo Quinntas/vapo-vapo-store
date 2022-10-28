@@ -3,7 +3,7 @@ import { useNewArrivalProductsQuery } from "@framework/product/get-all-new-arriv
 
 export default function NewArrivalsProductFeed() {
 	const { data, isLoading, error } = useNewArrivalProductsQuery({
-		limit: 10,
+		per_page: 10,
 	});
 
 	return (

@@ -14,7 +14,7 @@ const RelatedProducts: React.FC<ProductsProps> = ({
 	className = "mb-9 lg:mb-10 xl:mb-14",
 }) => {
 	const { data, isLoading, error } = useRelatedProductsQuery({
-		limit: 10,
+		per_page: 10,
 	});
 
 	return (

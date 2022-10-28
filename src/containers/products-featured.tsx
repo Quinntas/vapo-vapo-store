@@ -19,7 +19,7 @@ const ProductsFeatured: React.FC<ProductsProps> = ({
   limit = 5,
 }) => {
   const { data, error } = useFeaturedProductsQuery({
-    limit: limit,
+    per_page: limit,
   });
 
   return (

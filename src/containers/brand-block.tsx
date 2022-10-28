@@ -44,7 +44,7 @@ const BrandBlock: React.FC<BrandProps> = ({
 	sectionHeading,
 }) => {
 	const { data, isLoading, error } = useBrandsQuery({
-		limit: 8,
+		per_page: 8,
 	});
 	const brands = data?.brands;
 	return (
@@ -57,23 +57,23 @@ const BrandBlock: React.FC<BrandProps> = ({
 				<Carousel breakpoints={breakpoints} buttonClassName="-mt-8 md:-mt-12">
 					{isLoading && !data
 						? Array.from({ length: 10 }).map((_, idx) => (
-								<SwiperSlide key={idx}>
-									<CardRoundedLoader uniqueKey={`category-${idx}`} />
-								</SwiperSlide>
-						  ))
+							<SwiperSlide key={idx}>
+								<CardRoundedLoader uniqueKey={`category-${idx}`} />
+							</SwiperSlide>
+						))
 						: brands?.map((brand) => (
-								<SwiperSlide key={`brand--key${brand.id}`}>
-									<Card
-										item={brand}
-										variant="rounded"
-										size="medium"
-										href={{
-											pathname: ROUTES.SEARCH,
-											query: { brand: brand.slug },
-										}}
-									/>
-								</SwiperSlide>
-						  ))}
+							<SwiperSlide key={`brand--key${brand.id}`}>
+								<Card
+									item={brand}
+									variant="rounded"
+									size="medium"
+									href={{
+										pathname: ROUTES.SEARCH,
+										query: { brand: brand.slug },
+									}}
+								/>
+							</SwiperSlide>
+						))}
 				</Carousel>
 			)}
 		</div>

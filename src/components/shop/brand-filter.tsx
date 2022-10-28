@@ -7,7 +7,7 @@ export const BrandFilter = () => {
 	const router = useRouter();
 	const { pathname, query } = router;
 	const { data, isLoading, error } = useBrandsQuery({
-		limit: 10,
+		per_page: 10,
 	});
 	const selectedBrands = query?.brand ? (query.brand as string).split(",") : [];
 	const [formState, setFormState] = React.useState<string[]>(selectedBrands);
