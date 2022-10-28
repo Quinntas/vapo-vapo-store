@@ -14,7 +14,7 @@
 # apis
 #/src/pages/api
 
-/tests/
+#/tests/
 
 # next.js
 /.next/
