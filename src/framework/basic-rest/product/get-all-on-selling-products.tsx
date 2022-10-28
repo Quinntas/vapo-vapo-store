@@ -1,4 +1,4 @@
-import { QueryOptionsType, Product } from "@framework/types";
+import { QueryOptionsType, ProductVapo } from "@framework/types";
 import http from "@framework/utils/http";
 import { API_ENDPOINTS } from "@framework/utils/api-endpoints";
 import { useQuery } from "react-query";
@@ -9,7 +9,7 @@ export const fetchOnSellingProducts = async ({ queryKey }: any) => {
   return data;
 };
 export const useOnSellingProductsQuery = (options: QueryOptionsType) => {
-  return useQuery<Product[], Error>(
+  return useQuery<ProductVapo[], Error>(
     [API_ENDPOINTS.ON_SELLING_PRODUCTS, options],
     fetchOnSellingProducts
   );

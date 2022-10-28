@@ -6,6 +6,8 @@ module.exports = withPWA({
     disable: process.env.NODE_ENV !== "production",
     dest: "public",
     runtimeCaching,
+  }, images: {
+    domains: ['app.tagplus.com.br'],
   },
   i18n,
 });

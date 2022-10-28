@@ -86,6 +86,22 @@ export type Product = {
   variations?: object;
   [key: string]: unknown;
 };
+
+export type ProductVapo = {
+  id: number;
+  code: number;
+  name: string;
+  description: string;
+  quantity: number;
+  category: string;
+  price: number;
+  sale_price?: number;
+  slug: string
+  image: string;
+  gallery?: string[];
+  variations?: object;
+};
+
 export type OrderItem = {
   id: number | string;
   name: string;

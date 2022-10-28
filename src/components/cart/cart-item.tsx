@@ -8,14 +8,12 @@ import { useCart } from "@contexts/cart/cart.context";
 import usePrice from "@framework/product/use-price";
 import { ROUTES } from "@utils/routes";
 import { generateCartItemName } from "@utils/generate-cart-item-name";
-import { useTranslation } from "next-i18next";
 
 type CartItemProps = {
 	item: any;
 };
 
 const CartItem: React.FC<CartItemProps> = ({ item }) => {
-	const { t } = useTranslation("common");
 	const { addItemToCart, removeItemFromCart, clearItemFromCart } = useCart();
 	const { price } = usePrice({
 		amount: item.price,
@@ -62,7 +60,7 @@ const CartItem: React.FC<CartItemProps> = ({ item }) => {
 					{generateCartItemName(item.name, item.attributes)}
 				</Link>
 				<span className="text-sm text-gray-400 mb-2.5">
-					{t("Unidade")} : &nbsp;
+					{"Unidade"} : &nbsp;
 					{price}
 				</span>
 

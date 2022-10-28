@@ -10,10 +10,8 @@ import EmptyCart from "./empty-cart";
 import Link from "@components/ui/link";
 import { ROUTES } from "@utils/routes";
 import cn from "classnames";
-import { useTranslation } from "next-i18next";
 
 export default function Cart() {
-	const { t } = useTranslation("common");
 	const { closeCart } = useUI();
 	const { items, total, isEmpty } = useCart();
 	const { price: cartTotal } = usePrice({
@@ -24,7 +22,7 @@ export default function Cart() {
 		<div className="flex flex-col w-full h-full justify-between">
 			<div className="w-full flex justify-between items-center relative ps-5 md:ps-7 py-0.5 border-b border-gray-100">
 				<h2 className="font-bold text-xl md:text-2xl m-0 text-heading">
-					{t("Carrinho de Compras")}
+					{"Carrinho de Compras"}
 				</h2>
 				<button
 					className="flex text-2xl items-center justify-center text-gray-500 px-4 md:px-6 py-6 lg:py-8 focus:outline-none transition-opacity hover:opacity-60"
@@ -53,7 +51,7 @@ export default function Cart() {
 				>
 					<EmptyCart />
 					<h3 className="text-lg text-heading font-bold pt-8">
-						{t("Seu Carrinho Está Vazio")}
+						{"Seu Carrinho Está Vazio"}
 					</h3>
 				</motion.div>
 			)}
@@ -72,7 +70,7 @@ export default function Cart() {
 					)}
 				>
 					<span className="w-full pe-5 -mt-0.5 py-0.5">
-						{t("Finalizar Compra")}
+						{"Finalizar Compra"}
 					</span>
 					<span className="ms-auto flex-shrink-0 -mt-0.5 py-0.5">
 						<span className="border-s border-white pe-5 py-0.5" />

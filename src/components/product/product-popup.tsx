@@ -10,10 +10,8 @@ import { ProductAttributes } from "@components/product/product-attributes";
 import { generateCartItem } from "@utils/generate-cart-item";
 import usePrice from "@framework/product/use-price";
 import { getVariations } from "@framework/utils/get-variations";
-import { useTranslation } from "next-i18next";
 
 export default function ProductPopup() {
-	const { t } = useTranslation("common");
 	const {
 		modalData: { data },
 		closeModal,
@@ -50,7 +48,6 @@ export default function ProductPopup() {
 		}, 600);
 		const item = generateCartItem(data!, attributes);
 		addItemToCart(item, quantity);
-		console.log(item, "item");
 	}
 
 	function navigateToProductPage() {
@@ -80,7 +77,7 @@ export default function ProductPopup() {
 				<div className="flex-shrink-0 flex items-center justify-center w-full lg:w-430px max-h-430px lg:max-h-full overflow-hidden bg-gray-300">
 					<img
 						src={
-							image?.original ??
+							image ??
 							"/assets/placeholder/products/product-thumbnail.svg"
 						}
 						alt={name}
@@ -145,7 +142,7 @@ export default function ProductPopup() {
 								disabled={!isSelected}
 								loading={addToCartLoader}
 							>
-								{t("Adcionar ao Carrinho")}
+								{"Adcionar ao Carrinho"}
 							</Button>
 						</div>
 
@@ -154,7 +151,7 @@ export default function ProductPopup() {
 								onClick={navigateToCartPage}
 								className="w-full mb-4 h-11 md:h-12 rounded bg-gray-100 text-heading focus:outline-none border border-gray-300 transition-colors hover:bg-gray-50 focus:bg-gray-50"
 							>
-								{t("Ver Carrinho")}
+								{"Ver Carrinho"}
 							</button>
 						)}
 
@@ -163,7 +160,7 @@ export default function ProductPopup() {
 							variant="flat"
 							className="w-full h-11 md:h-12"
 						>
-							{t("Ver Detalhes")}
+							{"Ver Detalhes"}
 						</Button>
 					</div>
 				</div>

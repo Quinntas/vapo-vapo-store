@@ -20,7 +20,7 @@ export function generateCartItem(item: Item, attributes: object) {
       : id,
     name,
     slug,
-    image: image.thumbnail,
+    image: image,
     price: sale_price ? sale_price : price,
     attributes,
   };

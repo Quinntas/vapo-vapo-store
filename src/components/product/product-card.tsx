@@ -3,10 +3,10 @@ import Image from "next/image";
 import type { FC } from "react";
 import { useUI } from "@contexts/ui.context";
 import usePrice from "@framework/product/use-price";
-import { Product } from "@framework/types";
+import { ProductVapo } from "@framework/types";
 
 interface ProductProps {
-	product: Product;
+	product: ProductVapo;
 	className?: string;
 	contactClassName?: string;
 	imageContentClassName?: string;
@@ -31,7 +31,7 @@ const ProductCard: FC<ProductProps> = ({
 	const { price, basePrice, discount } = usePrice({
 		amount: product.sale_price ? product.sale_price : product.price,
 		baseAmount: product.price,
-		currencyCode: "USD",
+		currencyCode: "BRL",
 	});
 	function handlePopupView() {
 		setModalData({ data: product });
@@ -70,7 +70,7 @@ const ProductCard: FC<ProductProps> = ({
 				)}
 			>
 				<Image
-					src={product?.image?.thumbnail ?? placeholderImage}
+					src={product?.image ?? placeholderImage}
 					width={imgWidth}
 					height={imgHeight}
 					loading={imgLoading}
@@ -115,11 +115,10 @@ const ProductCard: FC<ProductProps> = ({
 					</p>
 				)}
 				<div
-					className={`text-heading font-semibold text-sm sm:text-base mt-1.5 space-s-2 ${
-						variant === "grid"
-							? "lg:text-lg lg:mt-2.5"
-							: "sm:text-xl md:text-base lg:text-xl md:mt-2.5 2xl:mt-3"
-					}`}
+					className={`text-heading font-semibold text-sm sm:text-base mt-1.5 space-s-2 ${variant === "grid"
+						? "lg:text-lg lg:mt-2.5"
+						: "sm:text-xl md:text-base lg:text-xl md:mt-2.5 2xl:mt-3"
+						}`}
 				>
 					<span className="inline-block">{price}</span>
 					{discount && (
