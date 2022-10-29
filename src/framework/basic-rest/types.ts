@@ -23,6 +23,7 @@ export type ProductsQueryOptionsType = {
 export type QueryOptionsType = {
   text?: string;
   category?: string;
+  subcategory?: string;
   status?: string;
   per_page?: number;
 };

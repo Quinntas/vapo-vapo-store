@@ -9,7 +9,12 @@ type PaginatedProduct = {
 const fetchProducts = async ({ queryKey }: any) => {
 	const [_key, _params] = queryKey;
 	const { data } = await http.get(API_ENDPOINTS.PRODUCTS);
-	const returnData = data.filter((item: any) => item.quantity !== 0);
+	let returnData = data.filter((item: any) => item.quantity !== 0);
+	if (_params.category) {
+		var categories = _params.category.split(',')
+		console.log(categories)
+		returnData = returnData.filter((item: any) => item.category != null ? categories.includes(item.category.name) : null)
+	}
 	return {
 		data: returnData,
 		paginatorInfo: {
