@@ -46,6 +46,22 @@ export type Category = {
   products?: Product[];
   productCount?: number;
 };
+export type CategoryChildrenVapo = {
+  id: number;
+  name: string;
+}; export type CategoryImageVapo = {
+  thumbnail: string;
+  original: string
+};
+export type CategoryVapo = {
+  id: number;
+  name: string;
+  slug: string;
+  image?: CategoryImageVapo;
+  icon?: string;
+  productCount?: number;
+  children: CategoryChildrenVapo[]
+};
 export type Collection = {
   id: number | string;
   name: string;

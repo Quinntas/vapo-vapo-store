@@ -6,9 +6,7 @@ import React from "react";
 export const CategoryFilter = () => {
 	const router = useRouter();
 	const { pathname, query } = router;
-	const { data, isLoading } = useCategoriesQuery({
-		limit: 10,
-	});
+	const { data, isLoading } = useCategoriesQuery({});
 	const selectedCategories = query?.category
 		? (query.category as string).split(",")
 		: [];
@@ -46,18 +44,30 @@ export const CategoryFilter = () => {
 	return (
 		<div className="block border-b border-gray-300 pb-7 mb-7">
 			<h3 className="text-heading text-sm md:text-base font-semibold mb-7">
-				{"Categoria"}
+				{"Categorias"}
 			</h3>
 			<div className="mt-2 flex flex-col space-y-4">
 				{items?.map((item: any) => (
-					<CheckBox
-						key={item.id}
-						label={item.name}
-						name={item.name.toLowerCase()}
-						checked={formState.includes(item.slug)}
-						value={item.slug}
-						onChange={handleItemClick}
-					/>
+					<>
+						<CheckBox
+							key={item.id}
+							label={item.name}
+							name={item.name.toLowerCase()}
+							checked={formState.includes(item.slug)}
+							value={item.slug}
+							onChange={handleItemClick}
+						/>
+						{item.children.map((child: any) => (
+							<CheckBox
+								key={child.id}
+								label={child.name}
+								name={child.name.toLowerCase()}
+								checked={formState.includes(child.slug)}
+								value={child.slug}
+								onChange={handleItemClick}
+							/>
+						))}
+					</>
 				))}
 			</div>
 		</div>

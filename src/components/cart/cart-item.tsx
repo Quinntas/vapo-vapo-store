@@ -40,6 +40,7 @@ const CartItem: React.FC<CartItemProps> = ({ item }) => {
 					width={112}
 					height={112}
 					loading="eager"
+					quality={65}
 					alt={item.name || "Product Image"}
 					className="bg-gray-300 object-cover"
 				/>

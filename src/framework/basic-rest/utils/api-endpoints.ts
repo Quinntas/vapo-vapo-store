@@ -5,7 +5,7 @@ export const API_ENDPOINTS = {
   LOGOUT: "/logout",
   CHANGEPASS: "/update-password",
   FORGET_PASSWORD: "/forget-password",
-  CATEGORIES: "/categories.json",
+  CATEGORIES: "/categories-vapo.json",
   FEATURED_CATEGORIES: "/featured_categories.json",
   COLLECTIONS: "/collections.json",
   BRANDS: "/brands.json",

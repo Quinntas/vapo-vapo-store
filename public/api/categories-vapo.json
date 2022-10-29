@@ -1,0 +1,309 @@
+[
+    {
+        "id": 11,
+        "name": "Freebase",
+        "slug": "Freebase",
+        "productCount": 13,
+        "children": [
+            {
+                "id": 21,
+                "name": "0mg"
+            },
+            {
+                "id": 22,
+                "name": "3mg"
+            },
+            {
+                "id": 23,
+                "name": "6mg"
+            }
+        ],
+        "icon": "",
+        "image": {
+            "thumbnail": "",
+            "original": ""
+        }
+    },
+    {
+        "id": 12,
+        "name": "Nic Salt",
+        "slug": "Nic Salt",
+        "productCount": 4,
+        "children": [
+            {
+                "id": 24,
+                "name": "18mg"
+            },
+            {
+                "id": 25,
+                "name": "20mg"
+            },
+            {
+                "id": 26,
+                "name": "24mg"
+            },
+            {
+                "id": 27,
+                "name": "25mg"
+            },
+            {
+                "id": 28,
+                "name": "30mg"
+            },
+            {
+                "id": 29,
+                "name": "35mg"
+            },
+            {
+                "id": 30,
+                "name": "45mg"
+            },
+            {
+                "id": 31,
+                "name": "50mg"
+            }
+        ],
+        "icon": "",
+        "image": {
+            "thumbnail": "",
+            "original": ""
+        }
+    },
+    {
+        "id": 14,
+        "name": "Pods",
+        "slug": "Pods",
+        "productCount": 8,
+        "children": [],
+        "icon": "",
+        "image": {
+            "thumbnail": "",
+            "original": ""
+        }
+    },
+    {
+        "id": 15,
+        "name": "Acessórios",
+        "slug": "Acessórios",
+        "productCount": 16,
+        "children": [
+            {
+                "id": 33,
+                "name": "Baterias"
+            },
+            {
+                "id": 43,
+                "name": "Algodão"
+            },
+            {
+                "id": 44,
+                "name": "Outros"
+            }
+        ],
+        "icon": "",
+        "image": {
+            "thumbnail": "",
+            "original": ""
+        }
+    },
+    {
+        "id": 16,
+        "name": "Atomizadores",
+        "slug": "Atomizadores",
+        "productCount": 5,
+        "children": [],
+        "icon": "",
+        "image": {
+            "thumbnail": "",
+            "original": ""
+        }
+    },
+    {
+        "id": 17,
+        "name": "Pods Descartáveis",
+        "slug": "Pods Descartáveis",
+        "productCount": 3,
+        "children": [
+            {
+                "id": 34,
+                "name": "600 Puffs"
+            },
+            {
+                "id": 35,
+                "name": "800 Puffs"
+            },
+            {
+                "id": 36,
+                "name": "300 Puffs"
+            },
+            {
+                "id": 37,
+                "name": "1000 Puffs"
+            },
+            {
+                "id": 38,
+                "name": "1200 Puffs"
+            },
+            {
+                "id": 39,
+                "name": "1500 Puffs"
+            },
+            {
+                "id": 40,
+                "name": "2000 Puffs"
+            },
+            {
+                "id": 41,
+                "name": "2500 Puffs"
+            },
+            {
+                "id": 42,
+                "name": "4000 Puffs"
+            },
+            {
+                "id": 46,
+                "name": "3000 Puffs"
+            },
+            {
+                "id": 66,
+                "name": "4500 Puffs"
+            }
+        ],
+        "icon": "",
+        "image": {
+            "thumbnail": "",
+            "original": ""
+        }
+    },
+    {
+        "id": 18,
+        "name": "Coils",
+        "slug": "Coils",
+        "productCount": 55,
+        "children": [],
+        "icon": "",
+        "image": {
+            "thumbnail": "",
+            "original": ""
+        }
+    },
+    {
+        "id": 19,
+        "name": "CBD",
+        "slug": "CBD",
+        "productCount": 6,
+        "children": [],
+        "icon": "",
+        "image": {
+            "thumbnail": "",
+            "original": ""
+        }
+    },
+    {
+        "id": 47,
+        "name": "Tabacaria",
+        "slug": "Tabacaria",
+        "productCount": 0,
+        "children": [
+            {
+                "id": 48,
+                "name": "Sedas"
+            },
+            {
+                "id": 49,
+                "name": "Dichvadores"
+            },
+            {
+                "id": 50,
+                "name": "Tabaco"
+            },
+            {
+                "id": 51,
+                "name": "Slickers/Container"
+            },
+            {
+                "id": 52,
+                "name": "Piteiras"
+            },
+            {
+                "id": 54,
+                "name": "Kumbaya"
+            },
+            {
+                "id": 55,
+                "name": "Bong/Pipe"
+            },
+            {
+                "id": 57,
+                "name": "Bandeja"
+            },
+            {
+                "id": 58,
+                "name": "Acessórios"
+            },
+            {
+                "id": 59,
+                "name": "Cases"
+            },
+            {
+                "id": 60,
+                "name": "Palheiros"
+            },
+            {
+                "id": 61,
+                "name": "Blunt"
+            }
+        ],
+        "icon": "",
+        "image": {
+            "thumbnail": "",
+            "original": ""
+        }
+    },
+    {
+        "id": 56,
+        "name": "Vapes",
+        "slug": "Vapes",
+        "productCount": 0,
+        "children": [
+            {
+                "id": 32,
+                "name": "Pod/Mod"
+            },
+            {
+                "id": 45,
+                "name": "MOD"
+            }
+        ],
+        "icon": "",
+        "image": {
+            "thumbnail": "",
+            "original": ""
+        }
+    },
+    {
+        "id": 62,
+        "name": "Narguile",
+        "slug": "Narguile",
+        "productCount": 1,
+        "children": [
+            {
+                "id": 63,
+                "name": "Essências"
+            },
+            {
+                "id": 64,
+                "name": "Narguiles Completos"
+            },
+            {
+                "id": 65,
+                "name": "Fogareiros/Aluminio"
+            }
+        ],
+        "icon": "",
+        "image": {
+            "thumbnail": "",
+            "original": ""
+        }
+    }
+]
