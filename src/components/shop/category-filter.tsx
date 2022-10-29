@@ -50,7 +50,7 @@ export const CategoryFilter = () => {
 				{items?.map((item: any) => (
 					<>
 						<CheckBox
-							key={item.id}
+							key={'category' + item.id}
 							label={item.name}
 							name={item.name.toLowerCase()}
 							checked={formState.includes(item.slug)}

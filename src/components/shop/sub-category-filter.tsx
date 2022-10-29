@@ -56,7 +56,7 @@ export const SubCategoryFilter = () => {
 					item.children.map((child: any) => (
 						<>
 							<CheckBox
-								key={child.id}
+								key={'subCategory' + child.id}
 								label={child.name}
 								name={child.name.toLowerCase()}
 								checked={formState.includes(child.slug)}
