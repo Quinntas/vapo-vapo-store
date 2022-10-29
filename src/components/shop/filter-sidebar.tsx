@@ -2,15 +2,21 @@ import { ShopFilters } from "@components/shop/filters";
 import Scrollbar from "@components/common/scrollbar";
 import { useUI } from "@contexts/ui.context";
 import { IoArrowBack, IoArrowForward } from "react-icons/io5";
-import { useTranslation } from "next-i18next";
 import { getDirection } from "@utils/get-direction";
 import { useRouter } from "next/router";
+import { useProductsQuery } from "@framework/product/get-all-products";
 
 const FilterSidebar = () => {
 	const { closeFilter } = useUI();
-	const router = useRouter();
-	const { t } = useTranslation("common");
-	const dir = getDirection(router.locale);
+	const { locale, query } = useRouter();
+	const dir = getDirection(locale);
+	const {
+		isFetching: isLoading,
+		data,
+		error,
+	} = useProductsQuery({ ...query });
+	if (error) return <p>{error.message}</p>;
+
 	return (
 		<div className="flex flex-col justify-between w-full h-full">
 			<div className="w-full border-b border-gray-100 flex justify-between items-center relative pe-5 md:pe-7 flex-shrink-0 py-0.5">
@@ -26,7 +32,7 @@ const FilterSidebar = () => {
 					)}
 				</button>
 				<h2 className="font-bold text-xl md:text-2xl m-0 text-heading w-full text-center pe-6">
-					{t("Filtros")}
+					{"Filtros"}
 				</h2>
 			</div>
 
@@ -37,7 +43,9 @@ const FilterSidebar = () => {
 			</Scrollbar>
 
 			<div className="text-sm md:text-base leading-4 flex items-center justify-center px-7 flex-shrink-0 h-14 bg-heading text-white">
-				9,608 {t("Itens")}
+				{isLoading && !data?.pages?.length ? (
+					<>Carregando</>
+				) : (<>{data?.pages[0].data.length} Itens</>)}
 			</div>
 		</div>
 	);

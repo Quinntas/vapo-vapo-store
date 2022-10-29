@@ -1,5 +1,5 @@
 import { CategoryFilter } from "./category-filter";
-import { BrandFilter } from "./brand-filter";
+import { SubCategoryFilter } from "./sub-category-filter";
 import { FilteredItem } from "./filtered-item";
 import { PriceFilter } from "./price-filter";
 import { useRouter } from "next/router";
@@ -43,8 +43,10 @@ export const ShopFilters: React.FC = () => {
 			</div>
 
 			<CategoryFilter />
-			<BrandFilter />
+			<SubCategoryFilter />
 			<PriceFilter />
 		</div>
 	);
 };
+
+// <BrandFilter />

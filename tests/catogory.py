@@ -33,7 +33,8 @@ for item in data:
                 cate['children'].append(
                     {
                         "id": item['id'],
-                        "name": item['descricao']
+                        "name": item['descricao'],
+                        "slug": item['descricao']
                     }
                 )
                 continue
