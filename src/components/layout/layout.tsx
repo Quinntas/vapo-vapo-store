@@ -6,11 +6,9 @@ import Search from "@components/common/search";
 import CookieBar from "@components/common/cookie-bar";
 import { useAcceptCookies } from "@utils/use-accept-cookies";
 import Button from "@components/ui/button";
-import { useTranslation } from "next-i18next";
 
 const Layout: React.FC = ({ children }) => {
 	const { acceptedCookies, onAcceptCookies } = useAcceptCookies();
-	const { t } = useTranslation("common");
 	return (
 		<div className="flex flex-col min-h-screen">
 			<NextSeo
@@ -20,23 +18,23 @@ const Layout: React.FC = ({ children }) => {
 						content: "width=device-width, initial-scale=1.0",
 					},
 				]}
-				title="ChawkBazar React - React Next E-commerce Template"
-				description="Fastest E-commerce template built with React, NextJS, TypeScript, React-Query and Tailwind CSS."
-				canonical="https://chawkbazar.vercel.app/"
+				title="Vapo Vapo Store"
+				description="Vapo Vapo Store Tabacaria"
+				canonical=""
 				openGraph={{
-					url: "https://chawkbazar.vercel.app",
-					title: "ChawkBazar React - React Next E-commerce Template",
+					url: "",
+					title: "Vapo Vapo Store",
 					description:
-						"Fastest E-commerce template built with React, NextJS, TypeScript, React-Query and Tailwind CSS.",
+						"Vapo Vapo Store Tabacaria",
 					images: [
 						{
-							url: "/assets/images/og-image-01.png",
+							url: "",
 							width: 800,
 							height: 600,
 							alt: "Og Image Alt",
 						},
 						{
-							url: "/assets/images/og-image-02.png",
+							url: "",
 							width: 900,
 							height: 800,
 							alt: "Og Image Alt Second",
@@ -58,11 +56,11 @@ const Layout: React.FC = ({ children }) => {
 			<MobileNavigation />
 			<Search />
 			<CookieBar
-				title={t("text-cookies-title")}
+				title={"Este site usa cookies para melhorar sua experiencia. Ao clickar, você aceita nossos termos de privacidade."}
 				hide={acceptedCookies}
 				action={
 					<Button onClick={() => onAcceptCookies()} variant="slim">
-						{t("text-accept-cookies")}
+						{'Aceitar Cookies'}
 					</Button>
 				}
 			/>

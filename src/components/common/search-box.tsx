@@ -1,6 +1,5 @@
 import SearchIcon from "@components/icons/search-icon";
 import React from "react";
-import { useTranslation } from "next-i18next";
 import { IoCloseOutline } from "react-icons/io5";
 type SearchProps = {
 	className?: string;
@@ -13,7 +12,6 @@ type SearchProps = {
 
 const SearchBox = React.forwardRef<HTMLInputElement, SearchProps>(
 	({ className, onSubmit, onClear, ...rest }, ref) => {
-		const { t } = useTranslation("forms");
 		return (
 			<form
 				className="relative pe-12 md:pe-14 bg-white overflow-hidden rounded-md w-full"
@@ -28,7 +26,7 @@ const SearchBox = React.forwardRef<HTMLInputElement, SearchProps>(
 					<input
 						id="search"
 						className="text-heading outline-none w-full h-12 lg:h-14 placeholder-gray-400 text-sm lg:text-base"
-						placeholder={t("placeholder-search")}
+						placeholder={"Procurar"}
 						aria-label="Search"
 						autoComplete="off"
 						ref={ref}

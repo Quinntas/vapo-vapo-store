@@ -11,7 +11,7 @@ const SearchProduct: React.FC<SearchProductProps> = ({ item }) => {
 	const { price, basePrice } = usePrice({
 		amount: item.sale_price ? item.sale_price : item.price,
 		baseAmount: item.price,
-		currencyCode: "USD",
+		currencyCode: "BRL",
 	});
 	return (
 		<Link
@@ -21,11 +21,12 @@ const SearchProduct: React.FC<SearchProductProps> = ({ item }) => {
 			<div className="relative flex w-24 h-24 rounded-md overflow-hidden bg-gray-200 flex-shrink-0 cursor-pointer me-4">
 				<Image
 					src={
-						item?.image?.original ?? "/assets/placeholder/search-product.svg"
+						item?.image ?? "/assets/placeholder/search-product.svg"
 					}
 					width={96}
 					height={96}
 					loading="eager"
+					quality={75}
 					alt={item.name || "Product Image"}
 					className="bg-gray-200 object-cover"
 				/>
