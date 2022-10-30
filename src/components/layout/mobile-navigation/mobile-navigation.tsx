@@ -1,18 +1,13 @@
 import Link from "@components/ui/link";
 import SearchIcon from "@components/icons/search-icon";
-import UserIcon from "@components/icons/user-icon";
 import MenuIcon from "@components/icons/menu-icon";
 import HomeIcon from "@components/icons/home-icon";
 import { useUI } from "@contexts/ui.context";
 import { useRouter } from "next/router";
-import { ROUTES } from "@utils/routes";
 import dynamic from "next/dynamic";
 import { Drawer } from "@components/common/drawer/drawer";
 import { getDirection } from "@utils/get-direction";
 const CartButton = dynamic(() => import("@components/cart/cart-button"), {
-	ssr: false,
-});
-const AuthMenu = dynamic(() => import("@components/layout/header/auth-menu"), {
 	ssr: false,
 });
 const MobileMenu = dynamic(
@@ -26,15 +21,8 @@ const BottomNavigation: React.FC = () => {
 		displaySidebar,
 		setDrawerView,
 		openSearch,
-		openModal,
-		setModalView,
-		isAuthorized,
 	} = useUI();
 
-	function handleLogin() {
-		setModalView("LOGIN_VIEW");
-		return openModal();
-	}
 	function handleMobileMenu() {
 		setDrawerView("MOBILE_MENU");
 		return openSidebar();
@@ -65,18 +53,6 @@ const BottomNavigation: React.FC = () => {
 					<HomeIcon />
 				</Link>
 				<CartButton />
-				<AuthMenu
-					isAuthorized={isAuthorized}
-					href={ROUTES.ACCOUNT}
-					className="flex-shrink-0"
-					btnProps={{
-						className: "flex-shrink-0 focus:outline-none",
-						children: <UserIcon />,
-						onClick: handleLogin,
-					}}
-				>
-					<UserIcon />
-				</AuthMenu>
 			</div>
 			<Drawer
 				placement={dir === "rtl" ? "right" : "left"}
