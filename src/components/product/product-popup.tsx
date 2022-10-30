@@ -10,6 +10,7 @@ import { ProductAttributes } from "@components/product/product-attributes";
 import { generateCartItem } from "@utils/generate-cart-item";
 import usePrice from "@framework/product/use-price";
 import { getVariations } from "@framework/utils/get-variations";
+import Image from "next/image";
 
 export default function ProductPopup() {
 	const {
@@ -75,14 +76,19 @@ export default function ProductPopup() {
 		<div className="rounded-lg bg-white">
 			<div className="flex flex-col lg:flex-row w-full md:w-[650px] lg:w-[960px] mx-auto overflow-hidden">
 				<div className="flex-shrink-0 flex items-center justify-center w-full lg:w-430px max-h-430px lg:max-h-full overflow-hidden bg-gray-300">
-					<img
-						src={
-							image ??
-							"/assets/placeholder/products/product-thumbnail.svg"
-						}
-						alt={name}
-						className="lg:object-cover lg:w-full lg:h-full"
-					/>
+					<div className="lg:object-cover lg:w-full lg:h-full inline-block">
+						<Image
+							src={
+								image ??
+								"/assets/placeholder/products/product-thumbnail.svg"
+							}
+							alt={name}
+							width={'100%'}
+							height={'100%'}
+							quality={75}
+							layout={"responsive"}
+						/>
+					</div>
 				</div>
 
 				<div className="flex flex-col p-5 md:p-8 w-full">

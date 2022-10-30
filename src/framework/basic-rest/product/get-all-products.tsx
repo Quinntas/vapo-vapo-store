@@ -51,6 +51,7 @@ const fetchProducts = async ({ queryKey }: any) => {
 		paginatorInfo: {
 			nextPageUrl: "",
 		},
+		hasNextPage: false
 	};
 };
 
