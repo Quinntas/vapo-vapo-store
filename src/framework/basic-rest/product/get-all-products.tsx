@@ -8,6 +8,18 @@ type PaginatedProduct = {
 	paginatorInfo: any;
 };
 
+function compare(a: any, b: any, sort_by: any) {
+	const bandA = a.sale_price
+	const bandB = b.sale_price
+
+	if (bandA > bandB) {
+		return sort_by == 'low-high' ? 1 : -1
+	} else if (bandA < bandB) {
+		return sort_by == 'low-high' ? -1 : 1
+	}
+	return 0
+}
+
 const fetchProducts = async ({ queryKey }: any) => {
 	const [_key, _params] = queryKey;
 	const { data } = await http.get(API_ENDPOINTS.PRODUCTS);
@@ -29,6 +41,11 @@ const fetchProducts = async ({ queryKey }: any) => {
 		})
 		returnData = filterdData.reduce((initial: any, current: any) => initial.concat(current), [])
 	}
+	if (_params.sort_by) {
+		if (_params.sort_by == 'low-high' || _params.sort_by == 'high-low')
+			returnData = returnData.sort((a: any, b: any) => compare(a, b, _params.sort_by))
+	}
+	console.log(_params)
 	return {
 		data: returnData,
 		paginatorInfo: {

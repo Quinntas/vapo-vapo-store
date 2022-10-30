@@ -41,9 +41,9 @@ const SearchTopBar = () => {
 				<ListBox
 					options={[
 						{ name: "Populares", value: "popularity" },
-						{ name: "Novos", value: "newest" },
-						{ name: "Preço ascendente", value: "low-high" },
-						{ name: "Preço descendente", value: "high-low" },
+						// { name: "Novos", value: "newest" },
+						{ name: "Preço Menor", value: "low-high" },
+						{ name: "Preço Maior", value: "high-low" },
 					]}
 				/>
 			</div>
