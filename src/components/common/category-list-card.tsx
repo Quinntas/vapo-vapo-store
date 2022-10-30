@@ -2,11 +2,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { IoIosArrowForward } from "react-icons/io";
 import { ROUTES } from "@utils/routes";
-import { Category } from "@framework/types";
+import { CategoryVapo } from "@framework/types";
 import { useTranslation } from "next-i18next";
 
 interface Props {
-	category: Category;
+	category: CategoryVapo;
 }
 
 const CategoryListCard: React.FC<Props> = ({ category }) => {

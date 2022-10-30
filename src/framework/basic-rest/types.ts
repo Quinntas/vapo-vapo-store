@@ -87,7 +87,7 @@ export type Tag = {
   slug: string;
 };
 export type Product = {
-  id: number | string;
+  id: number;
   name: string;
   slug: string;
   price: number;
@@ -106,7 +106,7 @@ export type Product = {
 
 export type ProductVapo = {
   id: number;
-  code: number;
+  code?: number;
   name: string;
   description: string;
   quantity: number;

@@ -2,14 +2,14 @@ import React from "react";
 import SectionHeader from "@components/common/section-header";
 import ProductCard from "@components/product/product-card";
 import ProductFeedLoader from "@components/ui/loaders/product-feed-loader";
-import { Product } from "@framework/types";
+import { ProductVapo } from "@framework/types";
 import Alert from "@components/ui/alert";
 
 interface ProductsProps {
 	sectionHeading: string;
 	categorySlug?: string;
 	className?: string;
-	products?: Product[];
+	products?: ProductVapo[];
 	loading: boolean;
 	error?: string;
 	uniqueKey?: string;
@@ -38,7 +38,7 @@ const ProductsBlock: React.FC<ProductsProps> = ({
 					{loading && !products?.length ? (
 						<ProductFeedLoader limit={10} uniqueKey={uniqueKey} />
 					) : (
-						products?.map((product: Product) => (
+						products?.map((product: ProductVapo) => (
 							<ProductCard
 								key={`product--key${product.id}`}
 								product={product}
