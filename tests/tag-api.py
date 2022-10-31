@@ -58,6 +58,7 @@ for x in range(1, length + 1):
         "sale_price": ajustPrice(parsed['valor_venda_varejo'],parsed['valor_oferta']),
         "image": parsed['imagem_principal']['url'],
         "gallery": gallery,
+        "created_on": parsed['data_criacao']
     }
     data.append(product)
 

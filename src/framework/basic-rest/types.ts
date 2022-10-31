@@ -119,6 +119,7 @@ export type ProductVapo = {
   image: string;
   gallery?: string[];
   variations?: object;
+  created_on: string;
 };
 
 export type OrderItem = {
