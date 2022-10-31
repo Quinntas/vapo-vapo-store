@@ -1,6 +1,5 @@
 import type { FC } from "react";
 import Link from "next/link";
-import { useTranslation } from "next-i18next";
 
 interface Props {
 	className?: string;
@@ -17,11 +16,10 @@ interface Props {
 
 const WidgetLink: FC<Props> = ({ className, data }) => {
 	const { widgetTitle, lists } = data;
-	const { t } = useTranslation("footer");
 	return (
 		<div className={`${className}`}>
 			<h4 className="text-heading text-sm md:text-base xl:text-lg font-semibold mb-5 2xl:mb-6 3xl:mb-7">
-				{t(`${widgetTitle}`)}
+				{widgetTitle}
 			</h4>
 			<ul className="text-xs lg:text-sm text-body flex flex-col space-y-3 lg:space-y-3.5">
 				{lists.map((list) => (
@@ -36,7 +34,7 @@ const WidgetLink: FC<Props> = ({ className, data }) => {
 						)}
 						<Link href={list.path ? list.path : "#!"}>
 							<a className="transition-colors duration-200 hover:text-black">
-								{t(`${list.title}`)}
+								{list.title}
 							</a>
 						</Link>
 					</li>

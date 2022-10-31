@@ -1,6 +1,6 @@
 import Container from "@components/ui/container";
 import { siteSettings } from "@settings/site-settings";
-import { useTranslation } from "next-i18next";
+import Image from 'next/image'
 
 interface CopyrightProps {
 	payment?: {
@@ -14,19 +14,18 @@ interface CopyrightProps {
 }
 const year = new Date().getFullYear();
 const Copyright: React.FC<CopyrightProps> = ({ payment }) => {
-	const { t } = useTranslation("footer");
 	return (
 		<div className="border-t border-gray-300 pt-5 pb-16 sm:pb-20 md:pb-5 mb-2 sm:mb-0">
 			<Container className="flex flex-col-reverse md:flex-row text-center md:justify-between">
 				<p className="text-body text-xs lg:text-sm leading-6">
-					{t("Copyright")} &copy; {year}&nbsp;
+					{"Copyright"} &copy; {year}&nbsp;
 					<a
 						className="font-semibold text-gray-700 transition-colors duration-200 ease-in-out hover:text-body"
 						href={siteSettings.author.websiteUrl}
 					>
 						{siteSettings.author.name}
 					</a>
-					&nbsp; {t("All rights reserved")}
+					&nbsp; {"All rights reserved"}
 				</p>
 
 				{payment && (
@@ -37,9 +36,9 @@ const Copyright: React.FC<CopyrightProps> = ({ payment }) => {
 								key={`payment-list--key${item.id}`}
 							>
 								<a href={item.path ? item.path : "/#"} target="_blank">
-									<img
+									<Image
 										src={item.image}
-										alt={t(`${item.name}`)}
+										alt={`${item.name}`}
 										height={item.height}
 										width={item.width}
 									/>
