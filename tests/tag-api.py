@@ -18,7 +18,7 @@ def formatDescription(text):
 data = []
 length = len(requests.get(f"https://api.tagplus.com.br/produtos?access_token={os.getenv('ACCESS_TOKEN')}").json())
 
-with open('tests/categories-vapo.json', 'r', encoding='utf-8') as f:
+with open('public/api/categories-vapo.json', 'r', encoding='utf-8') as f:
     categories = json.load(f)
 
 
@@ -34,6 +34,10 @@ def checkCategory(cid):
                         "sub_category_name": child['name']
                     }
 
+def ajustPrice(price, sale):
+    if sale == 0:
+        return price
+    return sale
 
 for x in range(1, length + 1):
     res = requests.get(f"https://api.tagplus.com.br/produtos/{x}?access_token={os.getenv('ACCESS_TOKEN')}")
@@ -51,11 +55,11 @@ for x in range(1, length + 1):
         "quantity": parsed['estoque']['qtd_revenda'],
         "category": checkCategory(parsed['categoria']['id']),
         "price": parsed['valor_venda_varejo'],
-        "sale_price": parsed['valor_oferta'],
+        "sale_price": ajustPrice(parsed['valor_venda_varejo'],parsed['valor_oferta']),
         "image": parsed['imagem_principal']['url'],
         "gallery": gallery,
     }
     data.append(product)
 
-with open('tests/products-vapo.json', 'w', encoding='utf-8') as f:
+with open('public/api/products-vapo.json', 'w', encoding='utf-8') as f:
     f.write(json.dumps(data, ensure_ascii=False))
