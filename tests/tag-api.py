@@ -1,6 +1,10 @@
 import html
 import json
 import re
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 import requests
 
@@ -14,10 +18,10 @@ def formatDescription(text):
 
 
 data = []
-length = len(requests.get(f"https://api.tagplus.com.br/produtos?access_token=M0y3hJPArXkl5oPtCo7tzjjbnPiGj1IO").json())
+length = len(requests.get(f"https://api.tagplus.com.br/produtos?access_token={os.getenv('ACCESS_TOKEN')}").json())
 print(length)
 
-with open('tests3.json', 'r', encoding='utf-8') as f:
+with open('tests/categories-vapo.json', 'r', encoding='utf-8') as f:
     categories = json.load(f)
 
 
@@ -35,7 +39,7 @@ def checkCategory(cid):
 
 
 for x in range(1, length + 1):
-    res = requests.get(f"https://api.tagplus.com.br/produtos/{x}?access_token=M0y3hJPArXkl5oPtCo7tzjjbnPiGj1IO")
+    res = requests.get(f"https://api.tagplus.com.br/produtos/{x}?access_token={os.getenv('ACCESS_TOKEN')}")
     parsed = res.json()
     gallery = parsed['imagens']
     if parsed['imagem_principal']['url'] in gallery:
@@ -50,11 +54,11 @@ for x in range(1, length + 1):
         "quantity": parsed['estoque']['qtd_revenda'],
         "category": checkCategory(parsed['categoria']['id']),
         "price": parsed['valor_venda_varejo'],
-        "sale_price": parsed['valor_venda_varejo'],
+        "sale_price": parsed['valor_oferta'],
         "image": parsed['imagem_principal']['url'],
         "gallery": gallery,
     }
     data.append(product)
 
-with open('products-vapo.json', 'w', encoding='utf-8') as f:
+with open('tests/products-vapo.json', 'w', encoding='utf-8') as f:
     f.write(json.dumps(data, ensure_ascii=False))

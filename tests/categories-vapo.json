@@ -7,15 +7,18 @@
         "children": [
             {
                 "id": 21,
-                "name": "0mg"
+                "name": "0mg",
+                "slug": "0mg"
             },
             {
                 "id": 22,
-                "name": "3mg"
+                "name": "3mg",
+                "slug": "3mg"
             },
             {
                 "id": 23,
-                "name": "6mg"
+                "name": "6mg",
+                "slug": "6mg"
             }
         ],
         "icon": "",
@@ -32,35 +35,43 @@
         "children": [
             {
                 "id": 24,
-                "name": "18mg"
+                "name": "18mg",
+                "slug": "18mg"
             },
             {
                 "id": 25,
-                "name": "20mg"
+                "name": "20mg",
+                "slug": "20mg"
             },
             {
                 "id": 26,
-                "name": "24mg"
+                "name": "24mg",
+                "slug": "24mg"
             },
             {
                 "id": 27,
-                "name": "25mg"
+                "name": "25mg",
+                "slug": "25mg"
             },
             {
                 "id": 28,
-                "name": "30mg"
+                "name": "30mg",
+                "slug": "30mg"
             },
             {
                 "id": 29,
-                "name": "35mg"
+                "name": "35mg",
+                "slug": "35mg"
             },
             {
                 "id": 30,
-                "name": "45mg"
+                "name": "45mg",
+                "slug": "45mg"
             },
             {
                 "id": 31,
-                "name": "50mg"
+                "name": "50mg",
+                "slug": "50mg"
             }
         ],
         "icon": "",
@@ -89,15 +100,18 @@
         "children": [
             {
                 "id": 33,
-                "name": "Baterias"
+                "name": "Baterias",
+                "slug": "Baterias"
             },
             {
                 "id": 43,
-                "name": "Algodão"
+                "name": "Algodão",
+                "slug": "Algodão"
             },
             {
                 "id": 44,
-                "name": "Outros"
+                "name": "Outros",
+                "slug": "Outros"
             }
         ],
         "icon": "",
@@ -126,47 +140,58 @@
         "children": [
             {
                 "id": 34,
-                "name": "600 Puffs"
+                "name": "600 Puffs",
+                "slug": "600 Puffs"
             },
             {
                 "id": 35,
-                "name": "800 Puffs"
+                "name": "800 Puffs",
+                "slug": "800 Puffs"
             },
             {
                 "id": 36,
-                "name": "300 Puffs"
+                "name": "300 Puffs",
+                "slug": "300 Puffs"
             },
             {
                 "id": 37,
-                "name": "1000 Puffs"
+                "name": "1000 Puffs",
+                "slug": "1000 Puffs"
             },
             {
                 "id": 38,
-                "name": "1200 Puffs"
+                "name": "1200 Puffs",
+                "slug": "1200 Puffs"
             },
             {
                 "id": 39,
-                "name": "1500 Puffs"
+                "name": "1500 Puffs",
+                "slug": "1500 Puffs"
             },
             {
                 "id": 40,
-                "name": "2000 Puffs"
+                "name": "2000 Puffs",
+                "slug": "2000 Puffs"
             },
             {
                 "id": 41,
-                "name": "2500 Puffs"
+                "name": "2500 Puffs",
+                "slug": "2500 Puffs"
             },
             {
                 "id": 42,
-                "name": "4000 Puffs"
+                "name": "4000 Puffs",
+                "slug": "4000 Puffs"
             },
             {
                 "id": 46,
-                "name": "3000 Puffs"
+                "name": "3000 Puffs",
+                "slug": "3000 Puffs"
             },
             {
                 "id": 66,
-                "name": "4500 Puffs"
+                "name": "4500 Puffs",
+                "slug": "4500 Puffs"
             }
         ],
         "icon": "",
@@ -200,448 +225,6 @@
         }
     },
     {
-        "id": 21,
-        "name": "0mg",
-        "slug": "0mg",
-        "productCount": 73,
-        "children": [
-            {
-                "id": 21,
-                "name": "0mg"
-            }
-        ],
-        "icon": "",
-        "image": {
-            "thumbnail": "",
-            "original": ""
-        }
-    },
-    {
-        "id": 22,
-        "name": "3mg",
-        "slug": "3mg",
-        "productCount": 100,
-        "children": [
-            {
-                "id": 22,
-                "name": "3mg"
-            }
-        ],
-        "icon": "",
-        "image": {
-            "thumbnail": "",
-            "original": ""
-        }
-    },
-    {
-        "id": 23,
-        "name": "6mg",
-        "slug": "6mg",
-        "productCount": 73,
-        "children": [
-            {
-                "id": 23,
-                "name": "6mg"
-            }
-        ],
-        "icon": "",
-        "image": {
-            "thumbnail": "",
-            "original": ""
-        }
-    },
-    {
-        "id": 24,
-        "name": "18mg",
-        "slug": "18mg",
-        "productCount": 7,
-        "children": [
-            {
-                "id": 24,
-                "name": "18mg"
-            }
-        ],
-        "icon": "",
-        "image": {
-            "thumbnail": "",
-            "original": ""
-        }
-    },
-    {
-        "id": 25,
-        "name": "20mg",
-        "slug": "20mg",
-        "productCount": 4,
-        "children": [
-            {
-                "id": 25,
-                "name": "20mg"
-            }
-        ],
-        "icon": "",
-        "image": {
-            "thumbnail": "",
-            "original": ""
-        }
-    },
-    {
-        "id": 26,
-        "name": "24mg",
-        "slug": "24mg",
-        "productCount": 11,
-        "children": [
-            {
-                "id": 26,
-                "name": "24mg"
-            }
-        ],
-        "icon": "",
-        "image": {
-            "thumbnail": "",
-            "original": ""
-        }
-    },
-    {
-        "id": 27,
-        "name": "25mg",
-        "slug": "25mg",
-        "productCount": 6,
-        "children": [
-            {
-                "id": 27,
-                "name": "25mg"
-            }
-        ],
-        "icon": "",
-        "image": {
-            "thumbnail": "",
-            "original": ""
-        }
-    },
-    {
-        "id": 28,
-        "name": "30mg",
-        "slug": "30mg",
-        "productCount": 26,
-        "children": [
-            {
-                "id": 28,
-                "name": "30mg"
-            }
-        ],
-        "icon": "",
-        "image": {
-            "thumbnail": "",
-            "original": ""
-        }
-    },
-    {
-        "id": 29,
-        "name": "35mg",
-        "slug": "35mg",
-        "productCount": 60,
-        "children": [
-            {
-                "id": 29,
-                "name": "35mg"
-            }
-        ],
-        "icon": "",
-        "image": {
-            "thumbnail": "",
-            "original": ""
-        }
-    },
-    {
-        "id": 30,
-        "name": "45mg",
-        "slug": "45mg",
-        "productCount": 6,
-        "children": [
-            {
-                "id": 30,
-                "name": "45mg"
-            }
-        ],
-        "icon": "",
-        "image": {
-            "thumbnail": "",
-            "original": ""
-        }
-    },
-    {
-        "id": 31,
-        "name": "50mg",
-        "slug": "50mg",
-        "productCount": 83,
-        "children": [
-            {
-                "id": 31,
-                "name": "50mg"
-            }
-        ],
-        "icon": "",
-        "image": {
-            "thumbnail": "",
-            "original": ""
-        }
-    },
-    {
-        "id": 32,
-        "name": "Pod/Mod",
-        "slug": "Pod/Mod",
-        "productCount": 1,
-        "children": [
-            {
-                "id": 32,
-                "name": "Pod/Mod"
-            }
-        ],
-        "icon": "",
-        "image": {
-            "thumbnail": "",
-            "original": ""
-        }
-    },
-    {
-        "id": 33,
-        "name": "Baterias",
-        "slug": "Baterias",
-        "productCount": 4,
-        "children": [
-            {
-                "id": 33,
-                "name": "Baterias"
-            }
-        ],
-        "icon": "",
-        "image": {
-            "thumbnail": "",
-            "original": ""
-        }
-    },
-    {
-        "id": 34,
-        "name": "600 Puffs",
-        "slug": "600 Puffs",
-        "productCount": 28,
-        "children": [
-            {
-                "id": 34,
-                "name": "600 Puffs"
-            }
-        ],
-        "icon": "",
-        "image": {
-            "thumbnail": "",
-            "original": ""
-        }
-    },
-    {
-        "id": 35,
-        "name": "800 Puffs",
-        "slug": "800 Puffs",
-        "productCount": 9,
-        "children": [
-            {
-                "id": 35,
-                "name": "800 Puffs"
-            }
-        ],
-        "icon": "",
-        "image": {
-            "thumbnail": "",
-            "original": ""
-        }
-    },
-    {
-        "id": 36,
-        "name": "300 Puffs",
-        "slug": "300 Puffs",
-        "productCount": 16,
-        "children": [
-            {
-                "id": 36,
-                "name": "300 Puffs"
-            }
-        ],
-        "icon": "",
-        "image": {
-            "thumbnail": "",
-            "original": ""
-        }
-    },
-    {
-        "id": 37,
-        "name": "1000 Puffs",
-        "slug": "1000 Puffs",
-        "productCount": 6,
-        "children": [
-            {
-                "id": 37,
-                "name": "1000 Puffs"
-            }
-        ],
-        "icon": "",
-        "image": {
-            "thumbnail": "",
-            "original": ""
-        }
-    },
-    {
-        "id": 38,
-        "name": "1200 Puffs",
-        "slug": "1200 Puffs",
-        "productCount": 8,
-        "children": [
-            {
-                "id": 38,
-                "name": "1200 Puffs"
-            }
-        ],
-        "icon": "",
-        "image": {
-            "thumbnail": "",
-            "original": ""
-        }
-    },
-    {
-        "id": 39,
-        "name": "1500 Puffs",
-        "slug": "1500 Puffs",
-        "productCount": 33,
-        "children": [
-            {
-                "id": 39,
-                "name": "1500 Puffs"
-            }
-        ],
-        "icon": "",
-        "image": {
-            "thumbnail": "",
-            "original": ""
-        }
-    },
-    {
-        "id": 40,
-        "name": "2000 Puffs",
-        "slug": "2000 Puffs",
-        "productCount": 8,
-        "children": [
-            {
-                "id": 40,
-                "name": "2000 Puffs"
-            }
-        ],
-        "icon": "",
-        "image": {
-            "thumbnail": "",
-            "original": ""
-        }
-    },
-    {
-        "id": 41,
-        "name": "2500 Puffs",
-        "slug": "2500 Puffs",
-        "productCount": 12,
-        "children": [
-            {
-                "id": 41,
-                "name": "2500 Puffs"
-            }
-        ],
-        "icon": "",
-        "image": {
-            "thumbnail": "",
-            "original": ""
-        }
-    },
-    {
-        "id": 42,
-        "name": "4000 Puffs",
-        "slug": "4000 Puffs",
-        "productCount": 18,
-        "children": [
-            {
-                "id": 42,
-                "name": "4000 Puffs"
-            }
-        ],
-        "icon": "",
-        "image": {
-            "thumbnail": "",
-            "original": ""
-        }
-    },
-    {
-        "id": 43,
-        "name": "Algodão",
-        "slug": "Algodão",
-        "productCount": 5,
-        "children": [
-            {
-                "id": 43,
-                "name": "Algodão"
-            }
-        ],
-        "icon": "",
-        "image": {
-            "thumbnail": "",
-            "original": ""
-        }
-    },
-    {
-        "id": 44,
-        "name": "Outros",
-        "slug": "Outros",
-        "productCount": 9,
-        "children": [
-            {
-                "id": 44,
-                "name": "Outros"
-            }
-        ],
-        "icon": "",
-        "image": {
-            "thumbnail": "",
-            "original": ""
-        }
-    },
-    {
-        "id": 45,
-        "name": "MOD",
-        "slug": "MOD",
-        "productCount": 19,
-        "children": [
-            {
-                "id": 45,
-                "name": "MOD"
-            }
-        ],
-        "icon": "",
-        "image": {
-            "thumbnail": "",
-            "original": ""
-        }
-    },
-    {
-        "id": 46,
-        "name": "3000 Puffs",
-        "slug": "3000 Puffs",
-        "productCount": 3,
-        "children": [
-            {
-                "id": 46,
-                "name": "3000 Puffs"
-            }
-        ],
-        "icon": "",
-        "image": {
-            "thumbnail": "",
-            "original": ""
-        }
-    },
-    {
         "id": 47,
         "name": "Tabacaria",
         "slug": "Tabacaria",
@@ -649,170 +232,63 @@
         "children": [
             {
                 "id": 48,
-                "name": "Sedas"
+                "name": "Sedas",
+                "slug": "Sedas"
             },
             {
                 "id": 49,
-                "name": "Dichvadores"
+                "name": "Dichvadores",
+                "slug": "Dichvadores"
             },
             {
                 "id": 50,
-                "name": "Tabaco"
+                "name": "Tabaco",
+                "slug": "Tabaco"
             },
             {
                 "id": 51,
-                "name": "Slickers/Container"
+                "name": "Slickers/Container",
+                "slug": "Slickers/Container"
             },
             {
                 "id": 52,
-                "name": "Piteiras"
+                "name": "Piteiras",
+                "slug": "Piteiras"
             },
             {
                 "id": 54,
-                "name": "Kumbaya"
+                "name": "Kumbaya",
+                "slug": "Kumbaya"
             },
             {
                 "id": 55,
-                "name": "Bong/Pipe"
+                "name": "Bong/Pipe",
+                "slug": "Bong/Pipe"
             },
             {
                 "id": 57,
-                "name": "Bandeja"
+                "name": "Bandeja",
+                "slug": "Bandeja"
             },
             {
                 "id": 58,
-                "name": "Acessórios"
+                "name": "Acessórios",
+                "slug": "Acessórios"
             },
             {
                 "id": 59,
-                "name": "Cases"
+                "name": "Cases",
+                "slug": "Cases"
             },
             {
                 "id": 60,
-                "name": "Palheiros"
+                "name": "Palheiros",
+                "slug": "Palheiros"
             },
             {
                 "id": 61,
-                "name": "Blunt"
-            }
-        ],
-        "icon": "",
-        "image": {
-            "thumbnail": "",
-            "original": ""
-        }
-    },
-    {
-        "id": 48,
-        "name": "Sedas",
-        "slug": "Sedas",
-        "productCount": 35,
-        "children": [
-            {
-                "id": 48,
-                "name": "Sedas"
-            }
-        ],
-        "icon": "",
-        "image": {
-            "thumbnail": "",
-            "original": ""
-        }
-    },
-    {
-        "id": 49,
-        "name": "Dichvadores",
-        "slug": "Dichvadores",
-        "productCount": 6,
-        "children": [
-            {
-                "id": 49,
-                "name": "Dichvadores"
-            }
-        ],
-        "icon": "",
-        "image": {
-            "thumbnail": "",
-            "original": ""
-        }
-    },
-    {
-        "id": 50,
-        "name": "Tabaco",
-        "slug": "Tabaco",
-        "productCount": 14,
-        "children": [
-            {
-                "id": 50,
-                "name": "Tabaco"
-            }
-        ],
-        "icon": "",
-        "image": {
-            "thumbnail": "",
-            "original": ""
-        }
-    },
-    {
-        "id": 51,
-        "name": "Slickers/Container",
-        "slug": "Slickers/Container",
-        "productCount": 3,
-        "children": [
-            {
-                "id": 51,
-                "name": "Slickers/Container"
-            }
-        ],
-        "icon": "",
-        "image": {
-            "thumbnail": "",
-            "original": ""
-        }
-    },
-    {
-        "id": 52,
-        "name": "Piteiras",
-        "slug": "Piteiras",
-        "productCount": 17,
-        "children": [
-            {
-                "id": 52,
-                "name": "Piteiras"
-            }
-        ],
-        "icon": "",
-        "image": {
-            "thumbnail": "",
-            "original": ""
-        }
-    },
-    {
-        "id": 54,
-        "name": "Kumbaya",
-        "slug": "Kumbaya",
-        "productCount": 0,
-        "children": [
-            {
-                "id": 54,
-                "name": "Kumbaya"
-            }
-        ],
-        "icon": "",
-        "image": {
-            "thumbnail": "",
-            "original": ""
-        }
-    },
-    {
-        "id": 55,
-        "name": "Bong/Pipe",
-        "slug": "Bong/Pipe",
-        "productCount": 5,
-        "children": [
-            {
-                "id": 55,
-                "name": "Bong/Pipe"
+                "name": "Blunt",
+                "slug": "Blunt"
             }
         ],
         "icon": "",
@@ -826,90 +302,16 @@
         "name": "Vapes",
         "slug": "Vapes",
         "productCount": 0,
-        "children": [],
-        "icon": "",
-        "image": {
-            "thumbnail": "",
-            "original": ""
-        }
-    },
-    {
-        "id": 57,
-        "name": "Bandeja",
-        "slug": "Bandeja",
-        "productCount": 2,
         "children": [
             {
-                "id": 57,
-                "name": "Bandeja"
-            }
-        ],
-        "icon": "",
-        "image": {
-            "thumbnail": "",
-            "original": ""
-        }
-    },
-    {
-        "id": 58,
-        "name": "Acessórios",
-        "slug": "Acessórios",
-        "productCount": 23,
-        "children": [
+                "id": 32,
+                "name": "Pod/Mod",
+                "slug": "Pod/Mod"
+            },
             {
-                "id": 58,
-                "name": "Acessórios"
-            }
-        ],
-        "icon": "",
-        "image": {
-            "thumbnail": "",
-            "original": ""
-        }
-    },
-    {
-        "id": 59,
-        "name": "Cases",
-        "slug": "Cases",
-        "productCount": 1,
-        "children": [
-            {
-                "id": 59,
-                "name": "Cases"
-            }
-        ],
-        "icon": "",
-        "image": {
-            "thumbnail": "",
-            "original": ""
-        }
-    },
-    {
-        "id": 60,
-        "name": "Palheiros",
-        "slug": "Palheiros",
-        "productCount": 4,
-        "children": [
-            {
-                "id": 60,
-                "name": "Palheiros"
-            }
-        ],
-        "icon": "",
-        "image": {
-            "thumbnail": "",
-            "original": ""
-        }
-    },
-    {
-        "id": 61,
-        "name": "Blunt",
-        "slug": "Blunt",
-        "productCount": 19,
-        "children": [
-            {
-                "id": 61,
-                "name": "Blunt"
+                "id": 45,
+                "name": "MOD",
+                "slug": "MOD"
             }
         ],
         "icon": "",
@@ -926,83 +328,18 @@
         "children": [
             {
                 "id": 63,
-                "name": "Essências"
+                "name": "Essências",
+                "slug": "Essências"
             },
             {
                 "id": 64,
-                "name": "Narguiles Completos"
+                "name": "Narguiles Completos",
+                "slug": "Narguiles Completos"
             },
             {
                 "id": 65,
-                "name": "Fogareiros/Aluminio"
-            }
-        ],
-        "icon": "",
-        "image": {
-            "thumbnail": "",
-            "original": ""
-        }
-    },
-    {
-        "id": 63,
-        "name": "Essências",
-        "slug": "Essências",
-        "productCount": 57,
-        "children": [
-            {
-                "id": 63,
-                "name": "Essências"
-            }
-        ],
-        "icon": "",
-        "image": {
-            "thumbnail": "",
-            "original": ""
-        }
-    },
-    {
-        "id": 64,
-        "name": "Narguiles Completos",
-        "slug": "Narguiles Completos",
-        "productCount": 1,
-        "children": [
-            {
-                "id": 64,
-                "name": "Narguiles Completos"
-            }
-        ],
-        "icon": "",
-        "image": {
-            "thumbnail": "",
-            "original": ""
-        }
-    },
-    {
-        "id": 65,
-        "name": "Fogareiros/Aluminio",
-        "slug": "Fogareiros/Aluminio",
-        "productCount": 2,
-        "children": [
-            {
-                "id": 65,
-                "name": "Fogareiros/Aluminio"
-            }
-        ],
-        "icon": "",
-        "image": {
-            "thumbnail": "",
-            "original": ""
-        }
-    },
-    {
-        "id": 66,
-        "name": "4500 Puffs",
-        "slug": "4500 Puffs",
-        "productCount": 7,
-        "children": [
-            {
-                "id": 66,
-                "name": "4500 Puffs"
+                "name": "Fogareiros/Aluminio",
+                "slug": "Fogareiros/Aluminio"
             }
         ],
         "icon": "",
