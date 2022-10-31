@@ -3,11 +3,9 @@ import json
 import re
 from dotenv import load_dotenv
 import os
-
-load_dotenv()
-
 import requests
 
+load_dotenv()
 
 def formatDescription(text):
     text = html.unescape(text).replace(u'\xa0', u' ').replace('"', '').replace("N'", '').replace('\n', '').replace('\t',
@@ -19,7 +17,6 @@ def formatDescription(text):
 
 data = []
 length = len(requests.get(f"https://api.tagplus.com.br/produtos?access_token={os.getenv('ACCESS_TOKEN')}").json())
-print(length)
 
 with open('tests/categories-vapo.json', 'r', encoding='utf-8') as f:
     categories = json.load(f)

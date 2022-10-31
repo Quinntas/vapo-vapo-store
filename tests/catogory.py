@@ -1,9 +1,12 @@
 import json
-
+from dotenv import load_dotenv
+import os
 import requests
 
-urlc = 'https://api.tagplus.com.br/categorias?access_token=M0y3hJPArXkl5oPtCo7tzjjbnPiGj1IO'
-urlp = 'https://api.tagplus.com.br/produtos?access_token=M0y3hJPArXkl5oPtCo7tzjjbnPiGj1IO&categoria='
+load_dotenv()
+
+urlc = f'https://api.tagplus.com.br/categorias?access_token={os.getenv("ACCESS_TOKEN")}'
+urlp = f'https://api.tagplus.com.br/produtos?access_token={os.getenv("ACCESS_TOKEN")}&categoria='
 
 data = requests.get(urlc).json()
 session = requests.session()
@@ -39,5 +42,5 @@ for item in data:
                 )
                 continue
 
-with open('tests3.json', 'w', encoding='utf-8') as f:
+with open('categories-vapo.json', 'w', encoding='utf-8') as f:
     f.write(json.dumps(parsedData, ensure_ascii=False))
