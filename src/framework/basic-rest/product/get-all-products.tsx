@@ -45,6 +45,9 @@ const fetchProducts = async ({ queryKey }: any) => {
 		if (_params.sort_by == 'low-high' || _params.sort_by == 'high-low')
 			returnData = returnData.sort((a: any, b: any) => compare(a, b, _params.sort_by))
 	}
+	if (_params.q) {
+		returnData = data.filter((item: any) => item.name.toLowerCase().includes(_params.q.toLowerCase()))
+	}
 	return {
 		data: returnData,
 		paginatorInfo: {
