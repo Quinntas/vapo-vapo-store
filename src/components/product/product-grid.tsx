@@ -1,9 +1,13 @@
-import ProductCard from "@components/product/product-card";
+
 import Button from "@components/ui/button";
 import type { FC } from "react";
 import { useProductsQuery } from "@framework/product/get-all-products";
 import { useRouter } from "next/router";
 import ProductFeedLoader from "@components/ui/loaders/product-feed-loader";
+import dynamic from "next/dynamic";
+
+const ProductCard = dynamic(() => import("@components/product/product-card"))
+
 
 interface ProductGridProps {
 	className?: string;

@@ -1,4 +1,4 @@
-import Container from "@components/ui/container";
+
 import Layout from "@components/layout/layout";
 import Subscription from "@components/common/subscription";
 import { ShopFilters } from "@components/shop/filters";
@@ -10,6 +10,10 @@ import { BreadcrumbItems } from "@components/common/breadcrumb";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { ROUTES } from "@utils/routes";
 import { GetStaticProps } from "next";
+import dynamic from "next/dynamic";
+
+const Container = dynamic(() => import("@components/ui/container"))
+
 
 export default function Shop() {
 

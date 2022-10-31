@@ -17,6 +17,7 @@ interface CheckoutInputType {
 	zipCode: string;
 	save: boolean;
 	note: string;
+	district: string;
 }
 
 const CheckoutForm: React.FC = () => {
@@ -40,12 +41,12 @@ const CheckoutForm: React.FC = () => {
 		let text = `
 		Olá, gostaria de pedir *${items.map((item: any) => item.name)}* \n
 		Detalhes - \n
-		Nome: ${input.fullName}\n
-		Preço Total: ${subtotal}\n
-		Número: ${input.phone}\n
-		Endereço: ${input.address}\n
-		Cep: ${input.zipCode}\n
-		Nota: ${input.note}\n
+		Nome: ${input.fullName} \n
+		Preço Total: ${subtotal} \n
+		Número: ${input.phone} \n
+		Endereço: ${input.address} - ${input.district} \n
+		Cep: ${input.zipCode} \n
+		Nota: ${input.note} \n
 		`
 		Router.push(url + text);
 	}
@@ -91,7 +92,7 @@ const CheckoutForm: React.FC = () => {
 					<div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0">
 						<Input
 							type="tel"
-							labelKey="Némero *"
+							labelKey="Número *"
 							{...register("phone", {
 								required: "Este campo é obrigatorio",
 							})}
@@ -101,16 +102,11 @@ const CheckoutForm: React.FC = () => {
 						/>
 
 						<Input
-							type="email"
-							labelKey="forms:label-email-star"
-							{...register("email", {
+							labelKey="Bairro *"
+							{...register("district", {
 								required: "Este campo é obrigatorio",
-								pattern: {
-									value: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-									message: "Porfavor informe um email valido",
-								},
 							})}
-							errorKey={errors.email?.message}
+							errorKey={errors.district?.message}
 							variant="solid"
 							className="w-full lg:w-1/2 lg:ms-3 mt-2 md:mt-0"
 						/>
