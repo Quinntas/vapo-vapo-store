@@ -59,6 +59,8 @@ export type CategoryVapo = {
   name: string;
   slug: string;
   image?: CategoryImageVapo;
+  sub_category_id: number;
+  sub_category_name: string;
   icon?: string;
   productCount?: number;
   children: CategoryChildrenVapo[]
@@ -110,7 +112,7 @@ export type ProductVapo = {
   name: string;
   description: string;
   quantity: number;
-  category: string;
+  category: CategoryVapo;
   price: number;
   sale_price?: number;
   slug: string

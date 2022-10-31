@@ -7,6 +7,7 @@ export function convertBreadcrumbTitle(string: string) {
 		.replace(/oe/g, "ö")
 		.replace(/ae/g, "ä")
 		.replace(/ue/g, "ü")
+		.replace(/%20/g, " ")
 		.toLowerCase();
 }
 

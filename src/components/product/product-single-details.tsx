@@ -14,7 +14,6 @@ import { toast } from "react-toastify";
 import { useWindowSize } from "@utils/use-window-size";
 import Carousel from "@components/ui/carousel/carousel";
 import { SwiperSlide } from "swiper/react";
-import ProductMetaReview from "@components/product/product-meta-review";
 
 const productGalleryCarouselResponsive = {
 	"768": {
@@ -60,9 +59,9 @@ const ProductSingleDetails: React.FC = () => {
 			setAddToCartLoader(false);
 		}, 600);
 
-		const item = generateCartItem(data!, attributes);
+		const item = generateCartItem(data!);
 		addItemToCart(item, quantity);
-		toast("Added to the bag", {
+		toast("Adicionado ao Carrinho", {
 			type: "dark",
 			progressClassName: "fancy-progress-bar",
 			position: width > 768 ? "bottom-right" : "top-right",
@@ -72,7 +71,6 @@ const ProductSingleDetails: React.FC = () => {
 			pauseOnHover: true,
 			draggable: true,
 		});
-		console.log(item, "item");
 	}
 
 	function handleAttribute(attribute: any) {
@@ -93,15 +91,27 @@ const ProductSingleDetails: React.FC = () => {
 					className="product-gallery"
 					buttonClassName="hidden"
 				>
-					{data?.gallery?.map((item, index: number) => (
-						<SwiperSlide key={`product-gallery-key-${index}`}>
+					<SwiperSlide key={`product-image-key-${data?.id}`}>
+						<div className="col-span-1 transition duration-150 ease-in hover:opacity-90">
+							<img
+								src={
+									data?.image ??
+									"/assets/placeholder/products/product-gallery.svg"
+								}
+								alt={`${data?.name}--${data?.id}`}
+								className="object-cover w-full"
+							/>
+						</div>
+					</SwiperSlide>
+					{data?.gallery?.map((item: any) => (
+						<SwiperSlide key={`product-gallery-key-${data.id}`}>
 							<div className="col-span-1 transition duration-150 ease-in hover:opacity-90">
 								<img
 									src={
-										item?.original ??
+										item ??
 										"/assets/placeholder/products/product-gallery.svg"
 									}
-									alt={`${data?.name}--${index}`}
+									alt={`${data?.name}--${data.id}`}
 									className="object-cover w-full"
 								/>
 							</div>
@@ -109,18 +119,29 @@ const ProductSingleDetails: React.FC = () => {
 					))}
 				</Carousel>
 			) : (
-				<div className="col-span-5 grid grid-cols-2 gap-2.5">
-					{data?.gallery?.map((item, index: number) => (
+				<div className="col-span-5 grid grid-cols-2 gap-2.5"><SwiperSlide key={`product-image-key-${data?.id}`}>
+					<div className="col-span-1 transition duration-150 ease-in hover:opacity-90">
+						<img
+							src={
+								data?.image ??
+								"/assets/placeholder/products/product-gallery.svg"
+							}
+							alt={`${data?.name}--${data?.id}`}
+							className="object-cover w-full"
+						/>
+					</div>
+				</SwiperSlide>
+					{data?.gallery?.map((item: any) => (
 						<div
-							key={index}
+							key={data.id}
 							className="col-span-1 transition duration-150 ease-in hover:opacity-90"
 						>
 							<img
 								src={
-									item?.original ??
+									item ??
 									"/assets/placeholder/products/product-gallery.svg"
 								}
-								alt={`${data?.name}--${index}`}
+								alt={`${data?.name}--${data.id}`}
 								className="object-cover w-full"
 							/>
 						</div>
@@ -185,12 +206,6 @@ const ProductSingleDetails: React.FC = () => {
 					<ul className="text-sm space-y-5 pb-1">
 						<li>
 							<span className="font-semibold text-heading inline-block pe-2">
-								SKU:
-							</span>
-							{data?.sku}
-						</li>
-						<li>
-							<span className="font-semibold text-heading inline-block pe-2">
 								Categoria:
 							</span>
 							<Link
@@ -199,31 +214,23 @@ const ProductSingleDetails: React.FC = () => {
 							>
 								{data?.category?.name}
 							</Link>
+						</li><li>
+							<span className="font-semibold text-heading inline-block pe-2">
+								Sub Categoria:
+							</span>
+							<Link
+								href="/"
+								className="transition hover:underline hover:text-heading"
+							>
+								{data?.category?.sub_category_name}
+							</Link>
 						</li>
-						{data?.tags && Array.isArray(data.tags) && (
-							<li className="productTags">
-								<span className="font-semibold text-heading inline-block pe-2">
-									Tags:
-								</span>
-								{data.tags.map((tag) => (
-									<Link
-										key={tag.id}
-										href={tag.slug}
-										className="inline-block pe-1.5 transition hover:underline hover:text-heading last:pe-0"
-									>
-										{tag.name}
-										<span className="text-heading">,</span>
-									</Link>
-								))}
-							</li>
-						)}
 					</ul>
 				</div>
-
-				<ProductMetaReview data={data} />
 			</div>
 		</div>
 	);
 };
+// <ProductMetaReview data={data} />
 
 export default ProductSingleDetails;

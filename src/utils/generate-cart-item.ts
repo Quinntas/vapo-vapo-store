@@ -1,27 +1,21 @@
-import isEmpty from "lodash/isEmpty";
+
 
 interface Item {
-  id: string | number;
+  id: number;
   name: string;
   slug: string;
-  image: {
-    thumbnail: string;
-    [key: string]: unknown;
-  };
+  image: string;
   price: number;
   sale_price?: number;
   [key: string]: unknown;
 }
-export function generateCartItem(item: Item, attributes: object) {
+export function generateCartItem(item: Item) {
   const { id, name, slug, image, price, sale_price } = item;
   return {
-    id: !isEmpty(attributes)
-      ? `${id}.${Object.values(attributes).join(".")}`
-      : id,
+    id: id,
     name,
     slug,
     image: image,
     price: sale_price ? sale_price : price,
-    attributes,
   };
 }

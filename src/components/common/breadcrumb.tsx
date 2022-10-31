@@ -1,7 +1,6 @@
 import React from "react";
 import ActiveLink from "@components/ui/active-link";
 import useBreadcrumb, { convertBreadcrumbTitle } from "@utils/use-breadcrumb";
-import { useTranslation } from "next-i18next";
 
 interface Props {
 	children: any;
@@ -59,11 +58,10 @@ export const BreadcrumbItems = (props: any) => {
 
 const Breadcrumb: React.FC<{ separator?: string }> = ({ separator = "/" }) => {
 	const breadcrumbs = useBreadcrumb();
-	const { t } = useTranslation("common");
 	return (
 		<BreadcrumbItems separator={separator}>
 			<ActiveLink href={"/"} activeClassName="font-semibold text-heading">
-				<a>{t("Home")}</a>
+				<a>{"Home"}</a>
 			</ActiveLink>
 
 			{breadcrumbs?.map((breadcrumb: any) => (
