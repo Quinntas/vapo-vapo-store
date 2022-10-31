@@ -5,7 +5,8 @@ import { useCheckoutMutation } from "@framework/checkout/use-checkout";
 import { CheckBox } from "@components/ui/checkbox";
 import Button from "@components/ui/button";
 import Router from "next/router";
-import { ROUTES } from "@utils/routes";
+import { useCart } from "@contexts/cart/cart.context";
+import usePrice from "@framework/product/use-price";
 
 interface CheckoutInputType {
 	fullName: string;
@@ -20,14 +21,33 @@ interface CheckoutInputType {
 
 const CheckoutForm: React.FC = () => {
 	const { mutate: updateUser, isLoading } = useCheckoutMutation();
+	const { items, total, isEmpty } = useCart();
+	const { price: subtotal } = usePrice({
+		amount: total,
+		currencyCode: "BRL",
+	});
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
 	} = useForm<CheckoutInputType>();
+
 	function onSubmit(input: CheckoutInputType) {
-		updateUser(input);
-		Router.push(ROUTES.ORDER);
+		if (isEmpty)
+			return
+		updateUser(input)
+		let url = 'https://api.whatsapp.com/send?phone=559684006399&text='
+		let text = `
+		Olá, gostaria de pedir *${items.map((item: any) => item.name)}* \n
+		Detalhes - \n
+		Nome: ${input.fullName}\n
+		Preço Total: ${subtotal}\n
+		Número: ${input.phone}\n
+		Endereço: ${input.address}\n
+		Cep: ${input.zipCode}\n
+		Nota: ${input.note}\n
+		`
+		Router.push(url + text);
 	}
 
 	return (
