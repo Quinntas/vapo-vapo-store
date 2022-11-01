@@ -89,30 +89,30 @@ const CategoryBlock: React.FC<CategoriesProps> = ({
         >
           {isLoading && !data
             ? Array.from({ length: 10 }).map((_, idx) => {
-                if (type === 'rounded') {
-                  return (
-                    <SwiperSlide key={`card-rounded-${idx}`}>
-                      <CardRoundedLoader uniqueKey={`card-rounded-${idx}`} />
-                    </SwiperSlide>
-                  );
-                }
+              if (type === 'rounded') {
                 return (
-                  <SwiperSlide key={`card-circle-${idx}`}>
-                    <CardLoader uniqueKey={`card-circle-${idx}`} />
+                  <SwiperSlide key={`card-rounded-${idx}`}>
+                    <CardRoundedLoader uniqueKey={`card-rounded-${idx}`} />
                   </SwiperSlide>
                 );
-              })
-            : data?.categories?.data?.map((category) => (
-                <SwiperSlide key={`category--key-${category.id}`}>
-                  <Card
-                    item={category}
-                    href={`${ROUTES.CATEGORY}/${category.slug}`}
-                    variant={type}
-                    effectActive={true}
-                    size={type === 'rounded' ? 'medium' : 'small'}
-                  />
+              }
+              return (
+                <SwiperSlide key={`card-circle-${idx}`}>
+                  <CardLoader uniqueKey={`card-circle-${idx}`} />
                 </SwiperSlide>
-              ))}
+              );
+            })
+            : data?.categories?.data?.map((category) => (
+              <SwiperSlide key={`category--key-${category.id}`}>
+                <Card
+                  item={category}
+                  href={`${ROUTES.SEARCH}?category=${category.slug}`}
+                  variant={type}
+                  effectActive={true}
+                  size={type === 'rounded' ? 'medium' : 'small'}
+                />
+              </SwiperSlide>
+            ))}
         </Carousel>
       )}
     </div>

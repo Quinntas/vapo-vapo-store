@@ -1,5 +1,5 @@
 
-import Button from "@components/ui/button";
+
 import type { FC } from "react";
 import { useProductsQuery } from "@framework/product/get-all-products";
 import { useRouter } from "next/router";
@@ -16,9 +16,6 @@ export const ProductGrid: FC<ProductGridProps> = ({ className = "" }) => {
 	const { query } = useRouter();
 	const {
 		isFetching: isLoading,
-		isFetchingNextPage: loadingMore,
-		fetchNextPage,
-		hasNextPage,
 		data,
 		error,
 	} = useProductsQuery({ per_page: 10, ...query });
@@ -42,18 +39,6 @@ export const ProductGrid: FC<ProductGridProps> = ({ className = "" }) => {
 							/>
 						));
 					})
-				)}
-			</div>
-			<div className="text-center pt-8 xl:pt-14">
-				{hasNextPage && (
-					<Button
-						loading={loadingMore}
-						disabled={loadingMore}
-						onClick={() => fetchNextPage()}
-						variant="slim"
-					>
-						{"Carregar Mais"}
-					</Button>
 				)}
 			</div>
 		</>

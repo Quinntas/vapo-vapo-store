@@ -12,7 +12,7 @@ data = requests.get(urlc).json()
 session = requests.session()
 parsedData = []
 
-for item in data:
+for item in data: 
     if not item['categoria_mae']:
         parsedData.append(
             {
