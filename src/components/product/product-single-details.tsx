@@ -209,7 +209,7 @@ const ProductSingleDetails: React.FC = () => {
 								Categoria:
 							</span>
 							<Link
-								href="/"
+								href={"/search?category=" + data?.category.name}
 								className="transition hover:underline hover:text-heading"
 							>
 								{data?.category?.name}
@@ -219,7 +219,7 @@ const ProductSingleDetails: React.FC = () => {
 								Sub Categoria:
 							</span>
 							<Link
-								href="/"
+								href={"/search?subcategory=" + data?.category.sub_category_name}
 								className="transition hover:underline hover:text-heading"
 							>
 								{data?.category?.sub_category_name}
