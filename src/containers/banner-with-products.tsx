@@ -21,7 +21,7 @@ const BannerWithProducts: React.FC<ProductsProps> = ({
 	className = "mb-12 md:mb-14 xl:mb-16",
 }) => {
 	const { data, isLoading, error } = useOnSellingProductsQuery({
-		per_page: 10,
+		per_page: 9,
 	});
 
 	return (

@@ -22,18 +22,17 @@ export default function Home() {
     <>
       <BannerBlock data={masonryBanner} />
       <Container>
+        <CategoryBlock sectionHeading="Procure por Categoria" type="rounded" />
         <ProductsFeatured sectionHeading="Produtos em Destaque" />
       </Container>
       <BannerSliderBlock />
       <Container>
-        <CategoryBlock sectionHeading="Procure por Categoria" type="rounded" />
         <BannerCard
           key={`banner--key${banner[0].id}`}
           banner={banner[0]}
           href={`${ROUTES.COLLECTIONS}/${banner[0].slug}`}
           className="mb-12 lg:mb-14 xl:mb-16 pb-0.5 lg:pb-1 xl:pb-0"
         />
-        <BrandGridBlock sectionHeading="Marcas em Destaque" />
         <BannerCard
           key={`banner--key${banner[1].id}`}
           banner={banner[1]}
@@ -41,10 +40,12 @@ export default function Home() {
           className="mb-12 lg:mb-14 xl:mb-16 pb-0.5 lg:pb-1 xl:pb-0"
         />
         <NewArrivalsProductFeed />
-        <ExclusiveBlock /><BannerWithProducts
+        <ExclusiveBlock />
+        <BannerWithProducts
           sectionHeading="Nossos Produtos"
           categorySlug="/search"
         />
+        <BrandGridBlock sectionHeading="Marcas em Destaque" />
         <Subscription className="bg-opacity-0 px-5 sm:px-16 xl:px-0 py-12 md:py-14 xl:py-16" />
       </Container>
       <Divider className="mb-0" />
