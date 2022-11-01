@@ -7,7 +7,7 @@ module.exports = withPWA({
     dest: "public",
     runtimeCaching,
   }, images: {
-    domains: ['app.tagplus.com.br'],
+    domains: ['app.tagplus.com.br', 'www.flaticon.com'],
   },
   i18n,
 });
