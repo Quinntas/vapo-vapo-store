@@ -159,7 +159,7 @@ export const footer = {
 			path: "https://www.instagram.com/vapovapostore/",
 			image: "/assets/images/instagram.svg",
 			name: "social-instagram",
-			width: 50,
+			width: 35,
 			height: 20,
 		},
 		{
@@ -167,7 +167,7 @@ export const footer = {
 			path: "https://www.facebook.com/vapovapomacapa/",
 			image: "/assets/images/facebook.svg",
 			name: "social-facebook",
-			width: 50,
+			width: 35,
 			height: 20,
 		},
 		{
@@ -175,7 +175,7 @@ export const footer = {
 			path: "https://api.whatsapp.com/send/?phone=5596984006399&text&type=phone_number&app_absent=0",
 			image: "/assets/images/whatsapp.svg",
 			name: "social-whatsapp",
-			width: 50,
+			width: 35,
 			height: 20,
 		},
 	],

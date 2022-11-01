@@ -2,7 +2,6 @@ import Text from "@components/ui/text";
 import Input from "@components/ui/input";
 import Button from "@components/ui/button";
 import { useForm } from "react-hook-form";
-import { useTranslation } from "next-i18next";
 
 const data = {
 	title: "Quer receber novidades ?",
@@ -32,7 +31,6 @@ const Subscription: React.FC<Props> = ({
 	} = useForm<FormValues>({
 		defaultValues,
 	});
-	const { t } = useTranslation();
 	const { title, description, buttonText } = data;
 	async function onSubmit(input: FormValues) {
 		console.log(input, "data");
@@ -46,10 +44,10 @@ const Subscription: React.FC<Props> = ({
 					variant="mediumHeading"
 					className="mb-2 md:mb-2.5 lg:mb-3 xl:mb-3.5"
 				>
-					{t(`${title}`)}
+					{title}
 				</Text>
 				<p className="text-body text-xs md:text-sm leading-6 md:leading-7">
-					{t(`${description}`)}
+					{description}
 				</p>
 			</div>
 			<form
@@ -74,7 +72,7 @@ const Subscription: React.FC<Props> = ({
 						errorKey={errors.subscription_email?.message}
 					/>
 					<Button className="mt-3 sm:mt-0 w-full sm:w-auto sm:ms-2 md:h-full flex-shrink-0">
-						<span className="lg:py-0.5">{t(`${buttonText}`)}</span>
+						<span className="lg:py-0.5">{buttonText}</span>
 					</Button>
 				</div>
 			</form>
