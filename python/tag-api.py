@@ -1,3 +1,4 @@
+import asyncio
 import html
 import json
 import re
@@ -6,6 +7,26 @@ import os
 import requests
 
 load_dotenv()
+
+session = requests.session()
+
+def refreshToken():
+    if session.get(f"https://api.tagplus.com.br/produtos?access_token={os.getenv('ACCESS_TOKEN')}").status_code == 401:
+        res = session.post('https://api.tagplus.com.br/oauth2/token', data=
+                      {
+                          'grant_type':'refresh_token',
+                          'refresh_token': os.getenv('REFRESH_TOKEN'),
+                          'client_secret': os.getenv('CLIENT_SECRET'),
+                          'client_id': os.getenv('CLIENT_ID')
+                      }).json()
+        os.environ['REFRESH_TOKEN']= res['refresh_token']
+        os.environ['ACCESS_TOKEN']= res['access_token']
+        
+        
+refreshToken()
+
+os.system('python python/category.py 1')
+        
 
 def formatDescription(text):
     text = html.unescape(text).replace(u'\xa0', u' ').replace('"', '').replace("N'", '').replace('\n', '').replace('\t',
@@ -16,7 +37,7 @@ def formatDescription(text):
 
 
 data = []
-length = len(requests.get(f"https://api.tagplus.com.br/produtos?access_token={os.getenv('ACCESS_TOKEN')}").json())
+length = len(session.get(f"https://api.tagplus.com.br/produtos?access_token={os.getenv('ACCESS_TOKEN')}").json())
 
 with open('public/api/categories-vapo.json', 'r', encoding='utf-8') as f:
     categories = json.load(f)
@@ -39,8 +60,8 @@ def ajustPrice(price, sale):
         return price
     return sale
 
-for x in range(1, length + 1):
-    res = requests.get(f"https://api.tagplus.com.br/produtos/{x}?access_token={os.getenv('ACCESS_TOKEN')}")
+async def addProduct(x:int):
+    res = session.get(f"https://api.tagplus.com.br/produtos/{x}?access_token={os.getenv('ACCESS_TOKEN')}")
     parsed = res.json()
     gallery = parsed['imagens']
     if parsed['imagem_principal']['url'] in gallery:
@@ -61,6 +82,13 @@ for x in range(1, length + 1):
         "created_on": parsed['data_criacao']
     }
     data.append(product)
+    
+async def main():
+    for x in range(1, length + 1):
+        asyncio.create_task(addProduct(x))
 
-with open('public/api/products-vapo.json', 'w', encoding='utf-8') as f:
-    f.write(json.dumps(data, ensure_ascii=False))
+if __name__ == '__main__':
+    asyncio.run(main())
+    with open('public/api/products-vapo.json', 'w', encoding='utf-8') as f:
+        f.write(json.dumps(data, ensure_ascii=False))
+

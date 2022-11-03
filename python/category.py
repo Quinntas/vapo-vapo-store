@@ -5,6 +5,8 @@ import requests
 
 load_dotenv()
 
+print("RUNING")
+
 urlc = f'https://api.tagplus.com.br/categorias?access_token={os.getenv("ACCESS_TOKEN")}'
 urlp = f'https://api.tagplus.com.br/produtos?access_token={os.getenv("ACCESS_TOKEN")}&categoria='
 
