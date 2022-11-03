@@ -9,12 +9,12 @@
 /coverage
 
 # db
-#/prisma
+/prisma/
 
 # apis
 #/src/pages/api
 
-#/tests/
+/tests/
 
 # next.js
 /.next/
