@@ -37,7 +37,7 @@ const fetchProducts = async ({ queryKey }: any) => {
 		var filterdData: any = []
 		prices.forEach(function (price: any) {
 			var values = price.split('-')
-			filterdData.push(returnData.filter((item: any) => item.sale_price >= values[0] && item.sale_price <= values[1]))
+			filterdData.push(returnData.filter((item: any) => item.sale_price >= values[0] && item.sale_price <= values[1] ? values[1] : 1000000))
 		})
 		returnData = filterdData.reduce((initial: any, current: any) => initial.concat(current), [])
 	}
