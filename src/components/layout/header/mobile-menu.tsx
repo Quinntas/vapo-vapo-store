@@ -90,9 +90,8 @@ export default function MobileMenu() {
 							onClick={() => handleArrowClick(menuName)}
 						>
 							<IoIosArrowDown
-								className={`transition duration-200 ease-in-out transform text-heading ${
-									activeMenus.includes(menuName) ? "-rotate-180" : "rotate-0"
-								}`}
+								className={`transition duration-200 ease-in-out transform text-heading ${activeMenus.includes(menuName) ? "-rotate-180" : "rotate-0"
+									}`}
 							/>
 						</div>
 					)}
@@ -162,7 +161,6 @@ export default function MobileMenu() {
 									<ListMenu
 										dept={dept}
 										data={menu}
-										hasSubMenu={menu.subMenu}
 										menuName={menuName}
 										key={menuName}
 										menuIndex={index}

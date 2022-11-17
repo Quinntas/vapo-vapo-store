@@ -11,12 +11,12 @@ const AgeGate: React.FC = () => {
 	const { closeModal } = useUI();
 	const router = useRouter()
 
-	function handlePositive(){
+	function handlePositive() {
 		Cookies.set('age-gate', 'true', { expires: 7 })
-		router.push('/')
+		router.push('/search')
 	}
 
-	function handleNegative(){
+	function handleNegative() {
 		Cookies.set('age-gate', 'false', { expires: 7 })
 	}
 
@@ -30,25 +30,25 @@ const AgeGate: React.FC = () => {
 					{t("Você tem mais de 18 anos ?")}
 				</p>
 			</div>
-				<div className="flex justify-center items-center flex-wrap mb-5 md:mb-6 ">
-					<div className="relative">
-						<Button
-							className="h-11 md:h-12 w-2 mt-1.5 "
-							onClick={handlePositive}
-						>
-							{t("Sim")}
-							
-						</Button>
-					</div>
-					<div className="relative">
-						<Button
-							className="h-11 md:h-12 w-2 mt-1.5 ml-12"
-							onClick={handleNegative}
-						>
-							{t("Não")}
-						</Button>
-					</div>
+			<div className="flex justify-center items-center flex-wrap mb-5 md:mb-6 ">
+				<div className="relative">
+					<Button
+						className="h-11 md:h-12 w-2 mt-1.5 "
+						onClick={handlePositive}
+					>
+						{t("Sim")}
+
+					</Button>
 				</div>
+				<div className="relative">
+					<Button
+						className="h-11 md:h-12 w-2 mt-1.5 ml-12"
+						onClick={handleNegative}
+					>
+						{t("Não")}
+					</Button>
+				</div>
+			</div>
 		</div>
 	);
 };
