@@ -18,14 +18,18 @@ def refreshToken():
                           'refresh_token': os.getenv('REFRESH_TOKEN'),
                           'client_secret': os.getenv('CLIENT_SECRET'),
                           'client_id': os.getenv('CLIENT_ID')
-                      }).json()
-        os.environ['REFRESH_TOKEN']= res['refresh_token']
-        os.environ['ACCESS_TOKEN']= res['access_token']
+                      })
+        if res.status_code in range(1, 299):
+            res = res.json()
+            os.environ['REFRESH_TOKEN']= res['refresh_token']
+            os.environ['ACCESS_TOKEN']= res['access_token']
+        else:
+            exit()
         
         
 refreshToken()
 
-os.system('python python/category.py 1')
+os.system('python python/category.py')
         
 
 def formatDescription(text):

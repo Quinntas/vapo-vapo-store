@@ -26,7 +26,7 @@ export default function Shop() {
 							<div className="pb-7">
 								<BreadcrumbItems separator="/">
 									<ActiveLink
-										href={"/"}
+										href={"/search"}
 										activeClassName="font-semibold text-heading"
 									>
 										<a>{"Home"}</a>
