@@ -18,7 +18,7 @@ const CheckoutCard: React.FC = () => {
 		{
 			id: 2,
 			name: "Entrega",
-			price: "Gratis",
+			price: "Cobrança pelo Whatsapp",
 		},
 		{
 			id: 3,
