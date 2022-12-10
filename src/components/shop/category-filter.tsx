@@ -49,7 +49,7 @@ export const CategoryFilter = () => {
 			<div className="mt-2 flex flex-col space-y-4">
 				{items?.map((item: any) => (
 					<>
-						{item.productCount >= 1 ? <CheckBox
+						{item.productCount >= 0 ? <CheckBox
 							key={'category' + item.id}
 							label={item.name}
 							name={item.name.toLowerCase()}

@@ -5,7 +5,7 @@ import { PriceFilter } from "./price-filter";
 import { useRouter } from "next/router";
 import isEmpty from "lodash/isEmpty";
 
-export const ShopFilters: React.FC = () => {
+export const ShopFilters: React.FC = () => { 
 	const router = useRouter();
 	const { pathname, query } = router;
 	return (
