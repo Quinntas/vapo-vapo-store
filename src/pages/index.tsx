@@ -45,7 +45,6 @@ export default function Home() {
                     sectionHeading="Nossos Produtos"
                     categorySlug="/search"
                 />
-                <BrandGridBlock sectionHeading="Marcas em Destaque"/>
                 <Subscription className="bg-opacity-0 px-5 sm:px-16 xl:px-0 py-12 md:py-14 xl:py-16"/>
             </Container>
             <Divider className="mb-0"/>

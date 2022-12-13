@@ -9,7 +9,7 @@ export const siteSettings = {
     },
     logo: {
         url: "/assets/images/logo-33.png",
-        alt: "vapeize",
+        alt: "Vapo Vapo Store",
         href: "/",
         width: 89,
         height: 80,
