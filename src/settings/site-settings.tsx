@@ -25,7 +25,7 @@ export const siteSettings = {
             },
             {
                 id: 2,
-                path: "/search?q=men-wear",
+                path: "/search",
                 label: "Produtos",
                 columns: [
                     {
@@ -33,33 +33,33 @@ export const siteSettings = {
                         columnItems: [
                             {
                                 id: 1,
-                                path: "/",
+                                path: "/search?category=Vapes",
                                 label: "Vapes",
                                 columnItemItems: [
                                     {
                                         id: 1,
-                                        path: "/",
-                                        label: "vape 1",
+                                        path: "/search?category=Vapes&subcategory=800 Puffs",
+                                        label: "800 Puffs",
                                     },
                                     {
                                         id: 2,
-                                        path: "/", label: "vape 1",
+                                        path: "/search?category=Vapes&subcategory=1000 Puffs", label: "1000 Puffs",
                                     },
                                     {
                                         id: 3,
-                                        path: "/", label: "vape 2",
+                                        path: "/search?category=Vapes&subcategory=1500 Puffs", label: "1500 Puffs",
                                     },
                                     {
                                         id: 4,
-                                        path: "/", label: "vape 3",
+                                        path: "/search?category=Vapes&subcategory=2000 Puffs", label: "2000 Puffs",
                                     },
                                     {
                                         id: 5,
-                                        path: "/", label: "vape 4",
+                                        path: "/search?category=Vapes&subcategory=4000 Puffs", label: "4000 Puffs",
                                     },
                                     {
                                         id: 6,
-                                        path: "/", label: "vape 5",
+                                        path: "/search?category=Vapes&subcategory=4500 Puffs", label: "4500 Puffs",
                                     },
                                 ],
                             },
@@ -81,37 +81,37 @@ export const siteSettings = {
                             {
                                 id: 1,
                                 path: "/search?category=Pods",
-                                label: "Pods Descartaveis",
+                                label: "Pods",
                                 columnItemItems: [
                                     {
                                         id: 1,
-                                        path: "/",
-                                        label: "Pod 1",
+                                        path: "/search?category=Pods&subcategory=Vaporesso",
+                                        label: "Vaporesso",
                                     },
                                     {
                                         id: 2,
-                                        path: "/",
-                                        label: "Pod 2",
+                                        path: "/search?category=Pods&subcategory=Voopoo",
+                                        label: "Voopoo",
                                     },
                                     {
                                         id: 3,
-                                        path: "/",
-                                        label: "Pod 3",
+                                        path: "/search?category=Pods&subcategory=GeekVape",
+                                        label: "GeekVape",
                                     },
                                     {
                                         id: 4,
-                                        path: "/",
-                                        label: "Pod 4",
+                                        path: "/search?category=Pods&subcategory=Ignite",
+                                        label: "Ignite",
                                     },
                                     {
                                         id: 5,
-                                        path: "/",
-                                        label: "Pod 5",
+                                        path: "/search?category=Pods&subcategory=XROS 2",
+                                        label: "XROS 2",
                                     },
                                     {
                                         id: 6,
-                                        path: "/",
-                                        label: "Pod 6",
+                                        path: "/search?category=Pods&subcategory=Renova Zero 2",
+                                        label: "Renova Zero 2",
                                     },
                                 ],
                             },
