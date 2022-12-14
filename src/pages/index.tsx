@@ -1,4 +1,4 @@
-import BannerCard from '@components/common/banner-card';
+
 import Container from '@components/ui/container';
 import CategoryBlock from '@containers/category-block';
 import Layout from '@components/layout/layout';
