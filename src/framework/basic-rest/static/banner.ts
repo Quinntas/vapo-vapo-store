@@ -185,12 +185,12 @@ export const homeThreeMasonryBanner = [
         slug: "Elfbar",
         image: {
             mobile: {
-                url: "/assets/images/banner_vapo/elfbar.png",
+                url: "/assets/images/banner_vapo/elfbar.jpg",
                 width: 232,
                 height: 232,
             },
             desktop: {
-                url: "/assets/images/banner_vapo/elfbar.png",
+                url: "/assets/images/banner_vapo/elfbar.jpg",
                 width: 425,
                 height: 425,
             },
@@ -203,12 +203,12 @@ export const homeThreeMasonryBanner = [
         slug: "Pacha Mama",
         image: {
             mobile: {
-                url: "/assets/images/banner_vapo/pachamama.png",
+                url: "/assets/images/banner_vapo/pachamama.jpg",
                 width: 232,
                 height: 232,
             },
             desktop: {
-                url: "/assets/images/banner_vapo/pachamama.png",
+                url: "/assets/images/banner_vapo/pachamama.jpg",
                 width: 425,
                 height: 425,
             },
@@ -221,12 +221,12 @@ export const homeThreeMasonryBanner = [
         slug: "Vaporesso",
         image: {
             mobile: {
-                url: "/assets/images/banner_vapo/vaporesso.png",
+                url: "/assets/images/banner_vapo/vaporesso.jpg",
                 width: 232,
                 height: 232,
             },
             desktop: {
-                url: "/assets/images/banner_vapo/vaporesso.png",
+                url: "/assets/images/banner_vapo/vaporesso.jpg",
                 width: 425,
                 height: 425,
             },
@@ -239,12 +239,12 @@ export const homeThreeMasonryBanner = [
         slug: "BLVK Juices",
         image: {
             mobile: {
-                url: "/assets/images/banner_vapo/blvkjuices.png",
+                url: "/assets/images/banner_vapo/blvkjuices.jpg",
                 width: 232,
                 height: 232,
             },
             desktop: {
-                url: "/assets/images/banner_vapo/blvkjuices.png",
+                url: "/assets/images/banner_vapo/blvkjuices.jpg",
                 width: 425,
                 height: 425,
             },
@@ -597,7 +597,7 @@ export const homeFourBanner = [
         slug: "new-backpack",
         image: {
             mobile: {
-                url: "/assets/images/banner/banner-mobile-6.png",
+                url: "/assets/images/banner/banner-mobile-6.jpg",
                 width: 450,
                 height: 180,
             },
@@ -614,7 +614,7 @@ export const homeFourBanner = [
         slug: "men's-collection",
         image: {
             mobile: {
-                url: "/assets/images/banner/banner-mobile-5.png",
+                url: "/assets/images/banner/banner-mobile-5.jpg",
                 width: 480,
                 height: 180,
             },
@@ -804,7 +804,7 @@ export const saleBannerGrid = [
                 height: 360,
             },
             desktop: {
-                url: "/assets/images/banner/grid/banner-4.png",
+                url: "/assets/images/banner/grid/banner-4.jpg",
                 width: 885,
                 height: 430,
             },
@@ -821,7 +821,7 @@ export const saleBannerGrid = [
                 height: 360,
             },
             desktop: {
-                url: "/assets/images/banner/grid/banner-5.png",
+                url: "/assets/images/banner/grid/banner-5.jpg",
                 width: 885,
                 height: 430,
             },
