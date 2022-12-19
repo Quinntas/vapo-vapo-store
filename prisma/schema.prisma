@@ -6,8 +6,8 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = "file:./database.db"
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 model User {
@@ -20,4 +20,12 @@ model User {
   Address     String
   createdOn   String
   modifiedOn  String
+}
+
+model Vapo {
+  id         Int      @id @default(autoincrement())
+  categories String
+  products   String
+  createdAt  DateTime @default(now()) @db.Timestamptz(3)
+  updatedAt  DateTime @updatedAt @db.Timestamptz(3)
 }

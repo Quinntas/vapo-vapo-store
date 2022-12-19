@@ -1,4 +1,5 @@
 import type {NextApiRequest, NextApiResponse} from 'next'
+import prisma from '../../../lib/prisma';
 
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
@@ -6,7 +7,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         return res.status(405).json({sucess: false});
     }
 
-    const categories = await fetch('https://vapo-api.vercel.app/api/v1/store/categories').then(res=>res.json())
+    const categories = await prisma.vapo.findMany().then(res => res[0].categories)
 
     return res.status(200).json(categories);
 
