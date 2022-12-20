@@ -3,10 +3,10 @@ import SectionHeader from '@components/common/section-header';
 import Carousel from '@components/ui/carousel/carousel';
 import CardLoader from '@components/ui/loaders/card-loader';
 import CardRoundedLoader from '@components/ui/loaders/card-rounded-loader';
-import {useCategoriesQuery} from '@framework/category/get-all-categories';
-import {ROUTES} from '@utils/routes';
+import { useCategoriesQuery } from '@framework/category/get-all-categories';
+import { ROUTES } from '@utils/routes';
 import Alert from '@components/ui/alert';
-import {SwiperSlide} from 'swiper/react';
+import { SwiperSlide } from 'swiper/react';
 
 interface CategoriesProps {
     sectionHeading: string;
@@ -69,36 +69,36 @@ const breakpointsCircle = {
 };
 
 const CategoryBlock: React.FC<CategoriesProps> = ({
-                                                      className = 'mb-10 md:mb-11 lg:mb-12 xl:mb-14 lg:pb-1 xl:pb-0',
-                                                      sectionHeading,
-                                                      type = 'circle',
-                                                  }) => {
-    const {data, isLoading, error} = useCategoriesQuery({
+    className = 'mb-10 md:mb-11 lg:mb-12 xl:mb-14 lg:pb-1 xl:pb-0',
+    sectionHeading,
+    type = 'circle',
+}) => {
+    const { data, isLoading, error } = useCategoriesQuery({
         limit: 10,
     });
 
     return (
         <div className={className}>
-            <SectionHeader sectionHeading={sectionHeading}/>
+            <SectionHeader sectionHeading={sectionHeading} />
             {error ? (
-                <Alert message={error?.message}/>
+                <Alert message={error?.message} />
             ) : (
                 <Carousel
                     breakpoints={type === 'rounded' ? breakpoints : breakpointsCircle}
                     buttonClassName="-mt-8 md:-mt-10"
                 >
                     {isLoading && !data
-                        ? Array.from({length: 10}).map((_, idx) => {
+                        ? Array.from({ length: 10 }).map((_, idx) => {
                             if (type === 'rounded') {
                                 return (
                                     <SwiperSlide key={`card-rounded-${idx}`}>
-                                        <CardRoundedLoader uniqueKey={`card-rounded-${idx}`}/>
+                                        <CardRoundedLoader uniqueKey={`card-rounded-${idx}`} />
                                     </SwiperSlide>
                                 );
                             }
                             return (
                                 <SwiperSlide key={`card-circle-${idx}`}>
-                                    <CardLoader uniqueKey={`card-circle-${idx}`}/>
+                                    <CardLoader uniqueKey={`card-circle-${idx}`} />
                                 </SwiperSlide>
                             );
                         })
