@@ -7,7 +7,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         return res.status(405).json({sucess: false});
     }
 
-    const categories = await prisma.vapo.findMany().then(res => res[0].categories)
+    const categories = await prisma.vapo.findMany().then((res: { categories: any; }[]) => res[0].categories)
 
     return res.status(200).json(categories);
 

@@ -44,6 +44,76 @@ async function categories(access_token: string | undefined) {
     return parsedData
 }
 
+function htmlEntities(str: string) {
+    var entities = [
+        ['amp', '&'],
+        ['apos', '\''],
+        ['#x27', '\''],
+        ['#x2F', '/'],
+        ['#39', '\''],
+        ['#47', '/'],
+        ['lt', '<'],
+        ['gt', '>'],
+        ['nbsp', ' '],
+        ['quot', '"'],
+        ['atilde', 'ã'],
+        ['aacute', 'á'],
+        ['oacute', 'ó'],
+        ['ccedil', 'ç'],
+        ['eacute', 'é'],
+        ['ecirc', 'ê'],
+        ["N'", '']
+    ];
+
+    for (var i = 0, max = entities.length; i < max; ++i)
+        str = str.replace(new RegExp('&' + entities[i][0] + ';', 'g'), entities[i][1]);
+
+    return str.replace(/<\/?[^>]+(>|$)/g, "")
+}
+
+function check_category(id: number, categories: any) {
+    categories.forEach((item: any) => {
+        if (item['children'] >= 1) {
+            const childIndex = item['children'].findIndex((x: any) => x.id == id)
+            return {
+                "id": item['id'],
+                "name": item['name'],
+                "sub_category_id": item['children'][childIndex]['id'],
+                "sub_category_name": item['children'][childIndex]['name']
+            }
+        }
+    });
+}
+
+async function products(access_token: string | undefined, categories: any) {
+    const length = await fetch('https://api.tagplus.com.br/produtos?access_token=' + access_token).then(res => res.json()).then(res => res.length)
+    let parsedData = []
+    for (let i = 1; i <= length; i++) {
+        let product = await fetch('https://api.tagplus.com.br/produtos/' + i + '?access_token=' + access_token).then(res => res.json())
+        if (product["estoque"]['qtd_revenda'] == 0)
+            continue
+        let gallery = product['imagens']
+        if (product['imagem_principal']['url'] in gallery)
+            gallery.pop(product['imagem_principal']['url'])
+        parsedData.push({
+            "id": product['id'],
+            "code": product['codigo'],
+            "name": product["decricao"],
+            "description": htmlEntities(product['descricao_longa']),
+            "slug": product['descricao'],
+            "quantity": product["estoque"]['qtd_revenda'],
+            "category": check_category(product['categoria']['id'], categories),
+            "price": product['valor_venda_varejo'],
+            "sale_price": product['valor_oferta'] == 0 ? product['valor_venda_varejo'] : product['valor_oferta'],
+            "image": product['imagem_principal']['url'],
+            "gallery": gallery,
+            'createdOn': product['data_criacao']
+        })
+
+    }
+    return parsedData
+}
+
 async function wipeVapoTable() {
     await prisma.vapo.deleteMany({})
 }
@@ -72,6 +142,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     await refresh(ACCESS_TOKEN)
 
     const data_categories = await categories(ACCESS_TOKEN)
+    const data_products = await products(ACCESS_TOKEN, data_categories)
 
     await wipeVapoTable()
 
@@ -79,7 +150,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         await prisma.vapo.create({
             data: {
                 categories: JSON.stringify(data_categories),
-                products: JSON.stringify([]),
+                products: JSON.stringify(data_products),
             }
         });
     } catch (e) {
