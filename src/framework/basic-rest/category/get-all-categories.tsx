@@ -8,6 +8,7 @@ export const fetchCategories = async ({ queryKey }: any) => {
 	const { data } = await http.get(API_ENDPOINTS.CATEGORIES);
 	return { categories: { data: data as CategoryVapo[] } };
 };
+
 export const useCategoriesQuery = (options: CategoriesQueryOptionsType) => {
 	return useQuery<{ categories: { data: CategoryVapo[] } }, Error>(
 		[API_ENDPOINTS.CATEGORIES, options],

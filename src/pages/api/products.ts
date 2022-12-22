@@ -1,5 +1,5 @@
 import type {NextApiRequest, NextApiResponse} from 'next'
-import prisma from '../../../lib/prisma';
+import {prisma} from '../../../lib/prisma';
 
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
@@ -9,6 +9,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
     const products = await prisma.vapo.findMany().then((res: { products: any; }[]) => res[0].products)
 
-    return res.status(200).json(products);
+    return res.status(200).json((JSON.parse(products)));
 
 }

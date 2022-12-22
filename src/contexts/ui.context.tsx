@@ -30,61 +30,61 @@ const initialState = {
 
 type Action =
   | {
-      type: "SET_AUTHORIZED";
-    }
+    type: "SET_AUTHORIZED";
+  }
   | {
-      type: "SET_UNAUTHORIZED";
-    }
+    type: "SET_UNAUTHORIZED";
+  }
   | {
-      type: "OPEN_SIDEBAR";
-    }
+    type: "OPEN_SIDEBAR";
+  }
   | {
-      type: "CLOSE_SIDEBAR";
-    }
+    type: "CLOSE_SIDEBAR";
+  }
   | {
-      type: "OPEN_CART";
-    }
+    type: "OPEN_CART";
+  }
   | {
-      type: "CLOSE_CART";
-    }
+    type: "CLOSE_CART";
+  }
   | {
-      type: "OPEN_SEARCH";
-    }
+    type: "OPEN_SEARCH";
+  }
   | {
-      type: "CLOSE_SEARCH";
-    }
+    type: "CLOSE_SEARCH";
+  }
   | {
-      type: "SET_TOAST_TEXT";
-      text: ToastText;
-    }
+    type: "SET_TOAST_TEXT";
+    text: ToastText;
+  }
   | {
-      type: "OPEN_FILTER";
-    }
+    type: "OPEN_FILTER";
+  }
   | {
-      type: "CLOSE_FILTER";
-    }
+    type: "CLOSE_FILTER";
+  }
   | {
-      type: "OPEN_MODAL";
-    }
+    type: "OPEN_MODAL";
+  }
   | {
-      type: "CLOSE_MODAL";
-    }
+    type: "CLOSE_MODAL";
+  }
   | {
-      type: "SET_MODAL_VIEW";
-      view: MODAL_VIEWS;
-    }
+    type: "SET_MODAL_VIEW";
+    view: MODAL_VIEWS;
+  }
   | {
-      type: "SET_DRAWER_VIEW";
-      view: DRAWER_VIEWS;
-    }
+    type: "SET_DRAWER_VIEW";
+    view: DRAWER_VIEWS;
+  }
   | {
-      type: "SET_MODAL_DATA";
-      data: any;
-    }
+    type: "SET_MODAL_DATA";
+    data: any;
+  }
   | {
-      type: "SET_USER_AVATAR";
-      value: string;
-    };
+    type: "SET_USER_AVATAR";
+    value: string;
+  };
 
 type MODAL_VIEWS =
   | "SIGN_UP_VIEW"
@@ -206,8 +206,11 @@ function uiReducer(state: State, action: Action) {
     }
   }
 }
+interface Props {
+  children: any
+}
 
-export const UIProvider: React.FC = (props) => {
+export const UIProvider: React.FC<Props> = (props) => {
   const [state, dispatch] = React.useReducer(uiReducer, initialState);
 
   const authorize = () => dispatch({ type: "SET_AUTHORIZED" });
@@ -285,7 +288,11 @@ export const useUI = () => {
   return context;
 };
 
-export const ManagedUIContext: React.FC = ({ children }) => (
+interface Props {
+  children: any
+}
+
+export const ManagedUIContext: React.FC<Props> = ({ children }) => (
   <CartProvider>
     <UIProvider>{children}</UIProvider>
   </CartProvider>

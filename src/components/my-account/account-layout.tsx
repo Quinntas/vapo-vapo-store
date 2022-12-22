@@ -3,7 +3,11 @@ import Container from "@components/ui/container";
 import AccountNav from "@components/my-account/account-nav";
 import Subscription from "@components/common/subscription";
 
-const AccountLayout: React.FunctionComponent<{}> = ({ children }) => {
+interface Props {
+	children: any
+}
+
+const AccountLayout: React.FunctionComponent<Props> = ({ children }) => {
 	return (
 		<>
 			<Container>

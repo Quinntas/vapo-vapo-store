@@ -4,7 +4,7 @@ import { siteSettings } from "@settings/site-settings";
 import HeaderMenu from "@components/layout/header/header-menu";
 import Logo from "@components/ui/logo";
 import { useUI } from "@contexts/ui.context";
-import { addActiveScroll } from "@utils/add-active-scroll";
+import { AddActiveScroll } from "@utils/add-active-scroll";
 import dynamic from "next/dynamic";
 import { useEffect } from "react";
 import Cookies from "js-cookie";
@@ -23,7 +23,7 @@ const Header: React.FC = () => {
 	} = useUI();
 	const siteHeaderRef = useRef() as DivElementRef;
 	const router = useRouter()
-	addActiveScroll(siteHeaderRef);
+	AddActiveScroll(siteHeaderRef);
 
 	function handleMobileMenu() {
 		setDrawerView("MOBILE_MENU");

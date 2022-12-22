@@ -24,9 +24,12 @@ export const useCart = () => {
     throw new Error(`useCart must be used within a CartProvider`);
   }
   return context;
-};
+}; interface Props {
+  children: any
+}
 
-export const CartProvider: React.FC = (props) => {
+
+export const CartProvider: React.FC<Props> = (props) => {
   const [savedCart, saveCart] = useLocalStorage(
     `chawkbazar-cart`,
     JSON.stringify(initialState)

@@ -22,6 +22,8 @@ type ModalProps = {
 	containerClassName?: string;
 	variant?: "center" | "bottom";
 };
+
+
 type DivElementRef = React.MutableRefObject<HTMLDivElement>;
 
 // variant based classes for modal root, container & close btn

@@ -14,6 +14,7 @@ type CollapseProps = {
 	translatorNS: string;
 	setExpanded: any;
 	variant?: "gray" | "transparent";
+	children?: React.ReactNode;
 };
 
 export const Collapse: React.FC<CollapseProps> = ({
@@ -62,13 +63,12 @@ export const Collapse: React.FC<CollapseProps> = ({
 				<div className="flex-shrink-0 relative w-4 h-4 flex justify-center items-center">
 					<div className="w-full h-0.5 bg-heading rounded-sm" />
 					<div
-						className={`origin-bottom transform w-0.5 h-full bg-heading rounded-sm absolute bottom-0 transition-transform duration-500 ease-in-out ${
-							isOpen ? "scale-0" : "scale-100"
-						}`}
+						className={`origin-bottom transform w-0.5 h-full bg-heading rounded-sm absolute bottom-0 transition-transform duration-500 ease-in-out ${isOpen ? "scale-0" : "scale-100"
+							}`}
 					/>
 				</div>
 			</motion.header>
-			<AnimatePresence initial={false}>
+			<AnimatePresence initial={false} >
 				{isOpen && (
 					<motion.div
 						key="content"
@@ -99,6 +99,7 @@ type AccordionProps = {
 		title?: string;
 		contentKey?: string;
 		content?: string;
+		children?: React.ReactNode;
 	}[];
 	variant?: "gray" | "transparent";
 };

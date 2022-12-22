@@ -7,7 +7,12 @@ import CookieBar from "@components/common/cookie-bar";
 import { useAcceptCookies } from "@utils/use-accept-cookies";
 import Button from "@components/ui/button";
 
-const Layout: React.FC = ({ children }) => {
+
+interface Props {
+	children:any
+}
+
+const Layout: React.FC<Props> = ({ children }) => {
 	const { acceptedCookies, onAcceptCookies } = useAcceptCookies();
 	return (
 		<div className="flex flex-col min-h-screen">
