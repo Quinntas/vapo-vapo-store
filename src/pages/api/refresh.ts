@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import prisma from '../../../lib/prisma';
+import { prisma } from '../../../lib/prisma';
 
 async function categories(access_token: string | undefined) {
     const url_categories = 'https://api.tagplus.com.br/categorias?access_token=' + access_token
@@ -118,18 +118,39 @@ async function wipeVapoTable() {
     await prisma.vapo.deleteMany({})
 }
 
-async function refresh(access_token: string | undefined) {
+async function refresh(access_token: string | undefined, refresh_token: string | undefined): Promise<boolean> {
     if (await fetch('https://api.tagplus.com.br/produtos?access_token=' + access_token).then(res => res.status) === 401) {
         const data = {
             'grant_type': 'refresh_token',
-            'refresh_token': process.env.REFRESH_TOKEN,
+            'refresh_token': refresh_token,
             'client_secret': process.env.CLIENT_SECRET,
             'client_id': process.env.CLIENT_ID
         }
-        console.log(data)
         const res = await fetch('https://api.tagplus.com.br/oauth2/token', { body: JSON.stringify(data) }).then(res => res.json())
         console.log(res)
+        await prisma.tagPlus.update({
+            where: {
+                id: 1
+            },
+            data: {
+                accessToken: res.access_token,
+                refreshToken: res.refresh_token
+            }
+        })
+        return true
     }
+    return false
+}
+
+async function getAccessData() {
+    return await prisma.tagPlus.findUnique({
+        where: {
+            id: 1
+        }, select: {
+            accessToken: true,
+            refreshToken: true
+        }
+    })
 }
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
@@ -137,12 +158,13 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         return res.status(405).json({ sucess: false });
     }
 
-    const ACCESS_TOKEN = process.env.ACCESS_TOKEN
+    let accessData = await getAccessData()
 
-    await refresh(ACCESS_TOKEN)
+    if (await refresh(accessData?.accessToken, accessData?.refreshToken))
+        accessData = await getAccessData()
 
-    const data_categories = await categories(ACCESS_TOKEN)
-    const data_products = await products(ACCESS_TOKEN, data_categories)
+    const data_categories = await categories(accessData?.accessToken)
+    const data_products = await products(accessData?.accessToken, data_categories)
 
     await wipeVapoTable()
 
