@@ -1,19 +1,22 @@
-import Container from '@components/ui/container';
 import Layout from '@components/layout/layout';
-import BannerBlock from '@containers/banner-block';
-import Divider from '@components/ui/divider';
-import { homeThreeMasonryBanner as masonryBanner } from '@framework/static/banner';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { GetStaticProps } from 'next';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
+    const [data, setData] = useState<any>(null)
+
+    useEffect(() => {
+        async function fetchRefresh() {
+            const res = await fetch(process.env.NEXT_PUBLIC_REST_API_ENDPOINT + '/refresh')
+            setData(await res.json())
+        }
+
+        fetchRefresh()
+    }, []);
     return (
         <>
-            <BannerBlock data={masonryBanner} />
-            <Container>
-
-            </Container>
-            <Divider className="mb-0" />
+            {JSON.stringify(data)}
         </>
     );
 }
@@ -21,7 +24,6 @@ export default function Home() {
 Home.Layout = Layout;
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
-    await fetch(process.env.NEXT_PUBLIC_REST_API_ENDPOINT + '/refresh')
     return {
         props: {
             ...(await serverSideTranslations(locale!, [
