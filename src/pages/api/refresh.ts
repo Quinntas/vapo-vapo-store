@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import prisma from '../../../lib/prisma';
+import {prisma} from '../../../lib/prisma';
 
 async function categories(access_token: string | undefined) {
     const url_categories = 'https://api.tagplus.com.br/categorias?access_token=' + access_token

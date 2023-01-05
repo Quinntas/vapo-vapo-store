@@ -5,11 +5,10 @@ import { ManagedUIContext } from "@contexts/ui.context";
 import ManagedModal from "@components/common/modal/managed-modal";
 import ManagedDrawer from "@components/common/drawer/managed-drawer";
 import { useEffect, useRef } from "react";
-import { QueryClient, QueryClientProvider } from "react-query";
+import { QueryClient, QueryClientProvider, DehydratedState, } from "react-query";
 import { Hydrate } from "react-query/hydration";
 import { ToastContainer } from "react-toastify";
 // import { ReactQueryDevtools } from "react-query/devtools";
-import { appWithTranslation } from "next-i18next";
 import { DefaultSeo } from "@components/common/default-seo";
 
 // Load Open Sans and satisfy typeface font
@@ -31,10 +30,14 @@ function handleExitComplete() {
 		window.scrollTo({ top: 0 });
 	}
 }
+interface Props {
+	children: any
+}
 
-const Noop: React.FC = ({ children }) => <>{children}</>;
+const Noop: React.FC<Props> = ({ children }) => <>{children}</>;
 
-const CustomApp = ({ Component, pageProps }: AppProps) => {
+
+const CustomApp = ({ Component, pageProps }: AppProps<{ dehydratedState: DehydratedState }>) => {
 	const queryClientRef = useRef<any>();
 	if (!queryClientRef.current) {
 		queryClientRef.current = new QueryClient();
@@ -66,4 +69,4 @@ const CustomApp = ({ Component, pageProps }: AppProps) => {
 	);
 };
 
-export default appWithTranslation(CustomApp);
+export default CustomApp;

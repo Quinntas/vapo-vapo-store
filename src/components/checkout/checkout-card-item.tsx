@@ -17,6 +17,7 @@ export const CheckoutItem: React.FC<{ item: Item }> = ({ item }) => {
 					height="64"
 					className="object-cover"
 					quality={60}
+					alt={'item-image'}
 				/>
 			</div>
 			<h6 className="text-sm ps-3 font-regular text-heading">

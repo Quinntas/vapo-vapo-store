@@ -45,4 +45,6 @@ const SearchBox = React.forwardRef<HTMLInputElement, SearchProps>(
 	}
 );
 
+SearchBox.displayName = 'SearcgBox'
+
 export default SearchBox;
